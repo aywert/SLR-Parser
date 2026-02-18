@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+0e1c0a8f296fc32f7b1fffba7d652b48 /home/michael/Desktop/Projects/2_course/SBER/SLR/src/lexer.cpp

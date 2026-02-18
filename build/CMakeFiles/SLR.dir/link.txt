@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/SLR.dir/src/main.cpp.o CMakeFiles/SLR.dir/src/lexer.cpp.o -o SLR  /usr/lib/x86_64-linux-gnu/libfl.so 
