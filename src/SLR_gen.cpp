@@ -43,6 +43,26 @@ Grammar::Grammar() {
   productions.insert({F, {Id}});                 // F → id
 } 
 
+std::set<Item> Grammar::Goto(const std::set<Item>& items, const Symbol& smbl) {
+  std::set<Item> result{};
+  // Проходим по каждому пункту из входного множества
+  for (const Item& item : items) { // for each item
+    // Проверяем: пункт не завершен И символ после точки равен искомому
+    if (!item.isComplete() && item.getSymbolAfterDot() == smbl) {
+      // Создаем новый пункт - копию текущего
+      Item newItem = item;  \
+      // Передвигаем точку на одну позицию вперед
+      newItem.moveDot();
+      // Добавляем в ядро
+      result.insert(newItem);
+    }
+  }
+  
+  // Применяем closure к полученному множеству
+  return Closure(result);
+
+}
+
 std::set<Item> Grammar::Closure(const std::set<Item>& items) {
   std::set<Item> result = items;  // starting with given set
   
@@ -51,7 +71,7 @@ std::set<Item> Grammar::Closure(const std::set<Item>& items) {
   while (!item_lst.empty()) {
     std::vector<Item> new_item_lst; //contains items which wasn't processed
   
-    for (const Item& item: item_lst) { //iteration for each item
+    for (const Item& item: item_lst) { //for each item
       if (!item.isComplete()) {
         Symbol current_smbl = item.getSymbolAfterDot(); //need to find every grammar rule which start with current_smbl
         
@@ -74,6 +94,23 @@ std::set<Item> Grammar::Closure(const std::set<Item>& items) {
     }
 
     item_lst = std::move(new_item_lst);
+  }
+
+  return result;
+}
+
+std::vector<std::vector<Symbol>> Grammar::getProductions(const Symbol& nonTerm) const {
+  std::vector<std::vector<Symbol>> result;
+  if (nonTerm.type_ != SymbolType::NON_TERMINAL) {
+    std::cerr << "Error: Symbol must be a non-terminal." << std::endl;
+    return result;
+    //throw std::invalid_argument("Symbol must be a non-terminal");
+    //abstain from throwing exceptions just yet;
+  }
+  
+  auto range = productions.equal_range(nonTerm);
+  for (auto it = range.first; it != range.second; ++it) {
+    result.push_back(it->second);
   }
 
   return result;

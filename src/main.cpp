@@ -46,9 +46,10 @@ int main(void) {
   Symbol Dollar = {SymbolType::TERMINAL,      "$"};
   Item I(E_, {{E}}, 0);
 
-  std::set set = gr.Closure({I});
+  std::set<Item> set = gr.Closure({I});
+  std::set<Item> set2 = gr.Goto(set, T);
 
-  for (const auto& element : set) {
+  for (const auto& element : set2) {
     element.printItem();
   }
 

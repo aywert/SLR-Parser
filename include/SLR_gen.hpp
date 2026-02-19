@@ -43,6 +43,14 @@ struct Item {
   std::vector<Symbol> right_;
   int dot_pos_;
 
+  bool operator<(const Item& other) const { return this->right_ < other.right_;};
+
+  Item(const Item& I) : 
+        left_(I.left_), right_(I.right_), dot_pos_(I.dot_pos_) {};
+
+  Item(const Symbol& left, const std::vector<Symbol>& right, int dot_pos) : 
+        left_(left), right_(right), dot_pos_(dot_pos) {};
+
   Symbol getSymbolAfterDot() const {
     if (dot_pos_ < right_.size()) {
       return right_[dot_pos_];
@@ -54,9 +62,11 @@ struct Item {
   void printItem() const {
     std::cout << left_.name_ << " -> ";
     for (size_t i = 0; i < right_.size(); i++) {
-      if (i == dot_pos_) printf("#");
+      if (i == dot_pos_) printf("●");
       std::cout << right_[i].name_;
     }
+
+    if (dot_pos_ == right_.size()) printf("●");
 
     std::cout << std::endl;
   }
@@ -70,15 +80,7 @@ struct Item {
     dot_pos_++;
   }
 
-  bool operator<(const Item& other) const {
-    return this->right_ < other.right_;
-  };
-  
-  Item(const Item& I) : 
-  left_(I.left_), right_(I.right_), dot_pos_(I.dot_pos_) {};
-
-  Item(const Symbol& left, const std::vector<Symbol>& right, int dot_pos) : 
-  left_(left), right_(right), dot_pos_(dot_pos) {};
+ 
   
 };
 
@@ -93,23 +95,9 @@ class Grammar {
   Grammar();
 
   std::set<Item> Closure(const std::set<Item>& items);
+  std::set<Item> Goto(const std::set<Item>& items, const Symbol& smbl);
   //Getting productions for every NonTerm Symbols
-  std::vector<std::vector<Symbol>> getProductions(const Symbol& nonTerm) const {
-    std::vector<std::vector<Symbol>> result;
-    if (nonTerm.type_ != SymbolType::NON_TERMINAL) {
-      std::cerr << "Error: Symbol must be a non-terminal." << std::endl;
-      return result;
-      //throw std::invalid_argument("Symbol must be a non-terminal");
-      //abstain from throwing exceptions just yet;
-    }
-   
-    auto range = productions.equal_range(nonTerm);
-    for (auto it = range.first; it != range.second; ++it) {
-      result.push_back(it->second);
-    }
-
-    return result;
-  }
+  std::vector<std::vector<Symbol>> getProductions(const Symbol& nonTerm) const;
 };
 
 #endif
