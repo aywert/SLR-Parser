@@ -129,6 +129,30 @@ SLR/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/build
 .PHONY : SLR/fast
 
+src/SLR_gen.o: src/SLR_gen.cpp.o
+.PHONY : src/SLR_gen.o
+
+# target to build an object file
+src/SLR_gen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/SLR_gen.cpp.o
+.PHONY : src/SLR_gen.cpp.o
+
+src/SLR_gen.i: src/SLR_gen.cpp.i
+.PHONY : src/SLR_gen.i
+
+# target to preprocess a source file
+src/SLR_gen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/SLR_gen.cpp.i
+.PHONY : src/SLR_gen.cpp.i
+
+src/SLR_gen.s: src/SLR_gen.cpp.s
+.PHONY : src/SLR_gen.s
+
+# target to generate assembly for a file
+src/SLR_gen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/SLR_gen.cpp.s
+.PHONY : src/SLR_gen.cpp.s
+
 src/lexer.o: src/lexer.cpp.o
 .PHONY : src/lexer.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... SLR"
+	@echo "... src/SLR_gen.o"
+	@echo "... src/SLR_gen.i"
+	@echo "... src/SLR_gen.s"
 	@echo "... src/lexer.o"
 	@echo "... src/lexer.i"
 	@echo "... src/lexer.s"

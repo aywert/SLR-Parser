@@ -7,7 +7,7 @@ find_package(FLEX REQUIRED)
 
 FLEX_TARGET(Lexer ${CMAKE_CURRENT_SOURCE_DIR}/include/gram.l ${CMAKE_CURRENT_SOURCE_DIR}/src/lexer.cpp)
 
-add_executable(SLR src/main.cpp ${FLEX_Lexer_OUTPUTS})
+add_executable(SLR src/main.cpp ${FLEX_Lexer_OUTPUTS} src/SLR_gen.cpp)
 
 
 target_include_directories(SLR PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)

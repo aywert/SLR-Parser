@@ -333,8 +333,8 @@ int yyFlexLexer::yywrap() { return 1; }
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 10
-#define YY_END_OF_BUFFER 11
+#define YY_NUM_RULES 13
+#define YY_END_OF_BUFFER 14
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -342,10 +342,10 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[16] =
+static const flex_int16_t yy_accept[19] =
     {   0,
-        0,    0,   11,    9,    7,    8,    3,    4,    2,    1,
-        5,    6,    5,    6,    0
+        0,    0,   14,   12,    9,   10,   11,    5,    6,    3,
+        1,    2,    4,    7,    8,    7,    8,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -353,17 +353,17 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    1,    1,    1,    1,    1,    1,    1,    4,
-        5,    6,    7,    1,    1,    1,    1,    8,    8,    8,
-        8,    8,    8,    8,    8,    8,    8,    1,    1,    1,
-        1,    1,    1,    1,    9,    9,    9,    9,    9,    9,
-        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
-        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
-        1,    1,    1,    1,    1,    1,    9,    9,    9,    9,
+        1,    2,    1,    1,    1,    4,    1,    1,    1,    5,
+        6,    7,    8,    1,    9,    1,   10,   11,   11,   11,
+       11,   11,   11,   11,   11,   11,   11,    1,    1,    1,
+        1,    1,    1,    1,   12,   12,   12,   12,   12,   12,
+       12,   12,   12,   12,   12,   12,   12,   12,   12,   12,
+       12,   12,   12,   12,   12,   12,   12,   12,   12,   12,
+        1,    1,    1,    1,    1,    1,   12,   12,   12,   12,
 
-        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
-        9,    9,    9,    9,    9,    9,    9,    9,    9,    9,
-        9,    9,    1,    1,    1,    1,    1,    1,    1,    1,
+       12,   12,   12,   12,   12,   12,   12,   12,   12,   12,
+       12,   12,   12,   12,   12,   12,   12,   12,   12,   12,
+       12,   12,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -380,41 +380,42 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[10] =
+static const YY_CHAR yy_meta[13] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    2,    2
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        2,    2
     } ;
 
-static const flex_int16_t yy_base[17] =
+static const flex_int16_t yy_base[20] =
     {   0,
-        0,    0,   13,   14,   14,   14,   14,   14,   14,   14,
-        4,    0,    3,    0,   14,    8
+        0,    0,   16,   17,   17,   17,   17,   17,   17,   17,
+       17,   17,   17,    4,    0,    3,    0,   17,   11
     } ;
 
-static const flex_int16_t yy_def[17] =
+static const flex_int16_t yy_def[20] =
     {   0,
-       15,    1,   15,   15,   15,   15,   15,   15,   15,   15,
-       15,   16,   15,   16,    0,   15
+       18,    1,   18,   18,   18,   18,   18,   18,   18,   18,
+       18,   18,   18,   18,   19,   18,   19,    0,   18
     } ;
 
-static const flex_int16_t yy_nxt[24] =
+static const flex_int16_t yy_nxt[30] =
     {   0,
-        4,    5,    6,    7,    8,    9,   10,   11,   12,   14,
-       13,   13,   15,    3,   15,   15,   15,   15,   15,   15,
-       15,   15,   15
+        4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
+       14,   15,   17,   16,   16,   18,    3,   18,   18,   18,
+       18,   18,   18,   18,   18,   18,   18,   18,   18
     } ;
 
-static const flex_int16_t yy_chk[24] =
+static const flex_int16_t yy_chk[30] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,   16,
-       13,   11,    3,   15,   15,   15,   15,   15,   15,   15,
-       15,   15,   15
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,   19,   16,   14,    3,   18,   18,   18,   18,
+       18,   18,   18,   18,   18,   18,   18,   18,   18
     } ;
 
 /* Table of booleans, true if rule could match eol. */
-static const flex_int32_t yy_rule_can_match_eol[11] =
+static const flex_int32_t yy_rule_can_match_eol[14] =
     {   0,
-0, 0, 0, 0, 0, 0, 0, 1, 0, 0,     };
+0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,     };
 
 /* The intent behind this definition is that it'll catch
  * any uses of REJECT which flex missed.
@@ -427,8 +428,8 @@ static const flex_int32_t yy_rule_can_match_eol[11] =
 #line 2 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
 #include <stdio.h>
 #include <token.hpp>
-#line 431 "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/lexer.cpp"
 #line 432 "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/lexer.cpp"
+#line 433 "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/lexer.cpp"
 
 #define INITIAL 0
 
@@ -563,7 +564,7 @@ YY_DECL
 #line 10 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
 
 
-#line 567 "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/lexer.cpp"
+#line 568 "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/lexer.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -590,13 +591,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 16 )
+				if ( yy_current_state >= 19 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 14 );
+		while ( yy_base[yy_current_state] != 17 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -638,50 +639,65 @@ YY_RULE_SETUP
 case 2:
 YY_RULE_SETUP
 #line 13 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
-{ return MULTIPLY; }
+{ return MINUS; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 14 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
-{ return LPAREN;}
+{ return MULTIPLY; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 15 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
-{ return RPAREN; }
+{ return DIVIDE; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 17 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
-{ return NUMBER; }
+#line 16 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
+{ return LPAREN;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 19 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
-{ return IDENTIFIER; }
+#line 17 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
+{ return RPAREN; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 21 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
-{ /* ignore */ }
+#line 19 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
+{ return NUMBER; }
 	YY_BREAK
 case 8:
-/* rule 8 can match eol */
 YY_RULE_SETUP
-#line 22 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
-{ /* ignore */ }
+#line 21 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
+{ return IDENTIFIER; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 23 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
-{ return ERROR; }
+{ /* ignore */ }
 	YY_BREAK
 case 10:
+/* rule 10 can match eol */
+YY_RULE_SETUP
+#line 24 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
+{ /* ignore */ }
+	YY_BREAK
+case 11:
 YY_RULE_SETUP
 #line 25 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
+{ return END_OF_FILE; }
+	YY_BREAK
+case 12:
+YY_RULE_SETUP
+#line 26 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
+{ return ERROR; }
+	YY_BREAK
+case 13:
+YY_RULE_SETUP
+#line 28 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
 ECHO;
 	YY_BREAK
-#line 685 "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/lexer.cpp"
+#line 701 "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/lexer.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1098,7 +1114,7 @@ int yyFlexLexer::yy_get_next_buffer()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 16 )
+			if ( yy_current_state >= 19 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1126,11 +1142,11 @@ int yyFlexLexer::yy_get_next_buffer()
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 16 )
+		if ( yy_current_state >= 19 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 15);
+	yy_is_jam = (yy_current_state == 18);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1653,5 +1669,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 25 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
+#line 28 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
 

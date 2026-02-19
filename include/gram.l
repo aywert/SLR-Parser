@@ -10,7 +10,9 @@
 %%
 
 "+"    { return PLUS; }
+"-"    { return MINUS; }
 "*"    { return MULTIPLY; }
+"/"    { return DIVIDE; }
 "("    { return LPAREN;}
 ")"    { return RPAREN; }
 
@@ -20,6 +22,7 @@
 
 [ \t]  { /* ignore */ }
 \n     { /* ignore */ }
+"$"      { return END_OF_FILE; }
 .      { return ERROR; }
 
 %%

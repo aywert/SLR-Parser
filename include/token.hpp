@@ -10,13 +10,14 @@ enum TokenType {
   PLUS, 
   MINUS,
   MULTIPLY,
+  DIVIDE,
   LPAREN,
   RPAREN,
   ERROR
 };
 
 // Структура для хранения токена
-struct Token {
+struct Token final {
   TokenType type_;
   std::string value_;
   int line_;
