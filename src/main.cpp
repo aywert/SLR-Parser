@@ -33,7 +33,7 @@ int main(void) {
   // }
 
   Symbol E_     = {SymbolType::NON_TERMINAL,  "E'"};
-  const Symbol E      = {SymbolType::NON_TERMINAL,  "E"};
+  Symbol E      = {SymbolType::NON_TERMINAL,  "E"};
   Symbol T      = {SymbolType::NON_TERMINAL,  "T"};
   Symbol F      = {SymbolType::NON_TERMINAL,  "F"};
   Symbol Plus   = {SymbolType::TERMINAL,      "+"};
@@ -53,8 +53,8 @@ int main(void) {
   //   element.printItem();
   // }
 
-  std::cout << "start: " << std::endl;
-  std::set<Symbol> set3 = gr.First(E);
+  std::cout << "FOLLOW: ";
+  std::set<Symbol> set3 = gr.Follow(T);
   for (const auto& element : set3) {
     std::cout << element.name_ << " ";
   }

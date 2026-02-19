@@ -164,6 +164,13 @@ CMakeFiles/SLR.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/stl_queue.h \
  /home/michael/Desktop/Projects/2_course/SBER/SLR/include/token.hpp \
  /home/michael/Desktop/Projects/2_course/SBER/SLR/include/SLR_gen.hpp \
+ /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
+ /usr/include/c++/13/bits/stl_tempbuf.h \
+ /usr/include/c++/13/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/iterator \
+ /usr/include/c++/13/bits/stream_iterator.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \

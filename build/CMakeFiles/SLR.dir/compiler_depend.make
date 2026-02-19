@@ -6,8 +6,10 @@ CMakeFiles/SLR.dir/src/SLR_gen.cpp.o: /home/michael/Desktop/Projects/2_course/SB
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
+  /usr/include/c++/13/algorithm \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/algorithmfwd.h \
   /usr/include/c++/13/bits/alloc_traits.h \
   /usr/include/c++/13/bits/allocator.h \
   /usr/include/c++/13/bits/basic_ios.h \
@@ -53,23 +55,28 @@ CMakeFiles/SLR.dir/src/SLR_gen.cpp.o: /home/michael/Desktop/Projects/2_course/SB
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
   /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
   /usr/include/c++/13/bits/stl_function.h \
+  /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
   /usr/include/c++/13/bits/stl_multiset.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_set.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
+  /usr/include/c++/13/bits/stream_iterator.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
   /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
@@ -97,8 +104,11 @@ CMakeFiles/SLR.dir/src/SLR_gen.cpp.o: /home/michael/Desktop/Projects/2_course/SB
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/iterator \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
+  /usr/include/c++/13/pstl/execution_defs.h \
+  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/set \
   /usr/include/c++/13/stdexcept \
@@ -414,8 +424,10 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
+  /usr/include/c++/13/algorithm \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
+  /usr/include/c++/13/bits/algorithmfwd.h \
   /usr/include/c++/13/bits/alloc_traits.h \
   /usr/include/c++/13/bits/allocator.h \
   /usr/include/c++/13/bits/basic_ios.h \
@@ -464,6 +476,7 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
   /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
@@ -477,13 +490,16 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_queue.h \
   /usr/include/c++/13/bits/stl_set.h \
+  /usr/include/c++/13/bits/stl_tempbuf.h \
   /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
+  /usr/include/c++/13/bits/stream_iterator.h \
   /usr/include/c++/13/bits/streambuf.tcc \
   /usr/include/c++/13/bits/streambuf_iterator.h \
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
+  /usr/include/c++/13/bits/uniform_int_dist.h \
   /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/bits/uses_allocator.h \
   /usr/include/c++/13/bits/uses_allocator_args.h \
@@ -513,8 +529,11 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
   /usr/include/c++/13/iosfwd \
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
+  /usr/include/c++/13/iterator \
   /usr/include/c++/13/new \
   /usr/include/c++/13/ostream \
+  /usr/include/c++/13/pstl/execution_defs.h \
+  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/queue \
   /usr/include/c++/13/set \
@@ -632,8 +651,6 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /usr/include/c++/13/deque:
 
-/usr/include/c++/13/bits/stl_heap.h:
-
 /usr/include/c++/13/bits/stl_deque.h:
 
 /usr/include/c++/13/bits/fstream.tcc:
@@ -641,8 +658,6 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 /usr/include/c++/13/bits/codecvt.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
@@ -689,8 +704,6 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
@@ -764,6 +777,22 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/stdio.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/sched.h:
+
+/usr/include/pthread.h:
+
 /usr/include/c++/13/bits/stl_construct.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
@@ -780,9 +809,21 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /usr/include/c++/13/ios:
 
+/usr/include/time.h:
+
+/usr/include/c++/13/bits/memoryfwd.h:
+
+/usr/include/wchar.h:
+
+/usr/include/c++/13/bits/memory_resource.h:
+
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
 /usr/include/c++/13/bits/invoke.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/c++/13/iterator:
 
 /usr/include/c++/13/set:
 
@@ -802,21 +843,13 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /usr/include/c++/13/bits/ios_base.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
+/usr/include/c++/13/bits/char_traits.h:
 
-/usr/include/c++/13/bits/ptr_traits.h:
+/usr/include/c++/13/bits/hashtable_policy.h:
 
-/usr/include/alloca.h:
-
-/usr/include/FlexLexer.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/c++/13/bits/basic_string.h:
-
-/usr/include/stdc-predef.h:
+/usr/include/c++/13/bits/nested_exception.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
@@ -828,7 +861,13 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /usr/include/c++/13/backward/binders.h:
 
-/usr/include/c++/13/bits/stringfwd.h:
+/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
+
+/usr/include/c++/13/bits/ptr_traits.h:
+
+/usr/include/alloca.h:
 
 /usr/include/asm-generic/errno-base.h:
 
@@ -839,10 +878,6 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 /usr/include/c++/13/bits/predefined_ops.h:
 
 /usr/include/c++/13/iosfwd:
-
-/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
-
-/usr/include/asm-generic/errno.h:
 
 /home/michael/Desktop/Projects/2_course/SBER/SLR/include/lexer.hpp:
 
@@ -862,9 +897,15 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /usr/include/c++/13/type_traits:
 
-/usr/include/c++/13/bits/enable_special_members.h:
-
 /usr/include/c++/13/bits/ostream_insert.h:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/c++/13/bits/exception.h:
+
+/usr/include/c++/13/streambuf:
 
 /usr/include/c++/13/bits/hashtable.h:
 
@@ -874,47 +915,23 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /home/michael/Desktop/Projects/2_course/SBER/SLR/include/SLR_gen.hpp:
 
+/usr/include/c++/13/bits/algorithmfwd.h:
+
 /usr/include/c++/13/bits/concept_check.h:
 
 /usr/include/c++/13/bits/alloc_traits.h:
 
-/usr/include/c++/13/bits/stl_iterator_base_types.h:
+/usr/include/FlexLexer.h:
 
-/home/michael/Desktop/Projects/2_course/SBER/SLR/src/SLR_gen.cpp:
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/c++/13/bits/basic_string.h:
 
 /usr/include/c++/13/bits/localefwd.h:
 
 /usr/include/c++/13/bits/exception_defines.h:
 
 /usr/include/c++/13/bits/locale_facets.h:
-
-/usr/include/c++/13/bits/memoryfwd.h:
-
-/usr/include/time.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
-
-/usr/include/c++/13/bits/basic_ios.tcc:
-
-/usr/include/c++/13/bits/nested_exception.h:
-
-/usr/include/c++/13/bits/memory_resource.h:
-
-/usr/include/wchar.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/c++/13/bits/char_traits.h:
-
-/usr/include/c++/13/bits/hashtable_policy.h:
-
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/c++/13/streambuf:
-
-/usr/include/c++/13/bits/exception.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
@@ -928,9 +945,27 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
+/usr/include/c++/13/bits/stl_algo.h:
+
 /usr/include/c++/13/cstddef:
 
 /usr/include/c++/13/vector:
+
+/usr/include/c++/13/algorithm:
+
+/usr/include/c++/13/bits/enable_special_members.h:
+
+/usr/include/c++/13/bits/stream_iterator.h:
+
+/usr/include/c++/13/bits/istream.tcc:
+
+/usr/include/c++/13/bits/exception_ptr.h:
+
+/usr/include/c++/13/bits/stl_heap.h:
+
+/usr/include/c++/13/ext/alloc_traits.h:
+
+/usr/include/c++/13/new:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
@@ -940,11 +975,21 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /usr/include/c++/13/string:
 
-/usr/include/c++/13/bits/istream.tcc:
+/usr/include/asm-generic/errno.h:
 
-/usr/include/c++/13/bits/exception_ptr.h:
+/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+
+/home/michael/Desktop/Projects/2_course/SBER/SLR/src/SLR_gen.cpp:
+
+/usr/include/c++/13/bits/stl_iterator_base_types.h:
 
 /usr/include/c++/13/bits/stl_set.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
+/usr/include/c++/13/bits/stl_tempbuf.h:
+
+/usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/c++/13/bits/stl_tree.h:
 
@@ -952,7 +997,9 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /usr/include/c++/13/bits/unordered_map.h:
 
-/usr/include/c++/13/bits/stl_vector.h:
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/c++/13/bits/uniform_int_dist.h:
 
 /usr/include/c++/13/bits/std_abs.h:
 
@@ -961,6 +1008,12 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 /usr/include/c++/13/bits/stl_multiset.h:
 
 /usr/include/c++/13/bits/uses_allocator.h:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/wctype.h:
+
+/usr/include/c++/13/exception:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
@@ -980,17 +1033,15 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /usr/include/c++/13/cerrno:
 
-/usr/include/stdio.h:
-
 /usr/include/c++/13/clocale:
 
 /usr/include/c++/13/fstream:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/c++/13/bits/charconv.h:
-
 /usr/include/c++/13/bits/stl_pair.h:
+
+/usr/include/c++/13/bits/charconv.h:
 
 /usr/include/c++/13/cstdio:
 
@@ -1005,6 +1056,12 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 /usr/include/c++/13/bits/functional_hash.h:
 
 /usr/include/errno.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/usr/include/locale.h:
+
+/usr/include/c++/13/ext/aligned_buffer.h:
 
 /usr/include/c++/13/cctype:
 
@@ -1028,15 +1085,19 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 
 /usr/include/features-time64.h:
 
-/usr/include/c++/13/ext/alloc_traits.h:
-
-/usr/include/c++/13/new:
-
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /usr/include/c++/13/bits/streambuf_iterator.h:
 
 /usr/include/c++/13/ostream:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
+
+/usr/include/c++/13/bits/basic_ios.tcc:
+
+/usr/include/c++/13/pstl/execution_defs.h:
+
+/usr/include/c++/13/pstl/glue_algorithm_defs.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
@@ -1063,27 +1124,3 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/linux/errno.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/c++/13/ext/aligned_buffer.h:
-
-/usr/include/locale.h:
-
-/usr/include/pthread.h:
-
-/usr/include/sched.h:
-
-/usr/include/stdlib.h:
-
-/usr/include/x86_64-linux-gnu/bits/errno.h:
-
-/usr/include/c++/13/exception:
-
-/usr/include/wctype.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:

@@ -150,3 +150,45 @@ std::set<Symbol> Grammar::First(const Symbol& smbl) {
 
   return result;
 }
+
+std::set<Symbol> Grammar::Follow(const Symbol& smbl) {
+  if (smbl.type_ == SymbolType::TERMINAL) return {};
+  if (smbl.name_ == std::string("E'")) {
+    return {Symbol(SymbolType::TERMINAL, "$")};
+  }
+
+  std::set<Symbol> result = {}; 
+  std::set<Symbol> processed_smbl{}; // to account for every symbol processed
+  std::vector<Symbol> smbl_lst = {smbl};
+
+  while(!smbl_lst.empty()) {
+  std::vector<Symbol> new_smbl_lst;
+
+    for (const Symbol& current : smbl_lst) {
+      for (const auto& nTerm : nonTerminals) { //for every none terminal Symbol
+        auto productions = getProductions(nTerm); //get productions
+
+        for (const auto& prod : productions) {
+          auto it = std::find(prod.begin(), prod.end(), current); //trying to find Symbol in production sequence
+          if (it != prod.end()) {
+            auto index = std::distance(prod.begin(), it);
+            if (index != prod.size() - 1) {
+              std::set<Symbol> newSet = First(prod[index+1]);
+              result.insert(newSet.begin(), newSet.end());
+            }
+            else {
+              if (nTerm.name_ == std::string("E'")) {result.insert(Symbol(SymbolType::TERMINAL, "$"));}
+              if (processed_smbl.find(current) == processed_smbl.end())
+                new_smbl_lst.push_back(nTerm); 
+            } //adding to the list Symbols that are of FOLLOW(left)=FOLLOW(smbl) types
+          }
+        }
+      }
+      processed_smbl.insert(current);
+    }
+
+   smbl_lst = std::move(new_smbl_lst);
+  }
+  
+  return result;
+}
