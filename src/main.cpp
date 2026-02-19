@@ -17,23 +17,23 @@ int main(void) {
 
   Token t = lexer.getNextToken(); 
   while (t.check()) {
-    t.Dump();
+    //t.Dump();
     t = lexer.getNextToken();
   }
 
   Grammar gr;
-  std::vector<std::vector<Symbol>> v = gr.getProductions({SymbolType::NON_TERMINAL, "E"});
+  // std::vector<std::vector<Symbol>> v = gr.getProductions({SymbolType::NON_TERMINAL, "E"});
 
-  for (auto it = v.begin(); it != v.end(); ++it) {
-    for (auto it_2 = it->begin(); it_2 != it->end(); ++it_2) {
-      std::cout << it_2->name_ << " ";
-    }
+  // for (auto it = v.begin(); it != v.end(); ++it) {
+  //   for (auto it_2 = it->begin(); it_2 != it->end(); ++it_2) {
+  //     std::cout << it_2->name_ << " ";
+  //   }
 
-    std::cout << std::endl;
-  }
+  //   std::cout << std::endl;
+  // }
 
   Symbol E_     = {SymbolType::NON_TERMINAL,  "E'"};
-  Symbol E      = {SymbolType::NON_TERMINAL,  "E"};
+  const Symbol E      = {SymbolType::NON_TERMINAL,  "E"};
   Symbol T      = {SymbolType::NON_TERMINAL,  "T"};
   Symbol F      = {SymbolType::NON_TERMINAL,  "F"};
   Symbol Plus   = {SymbolType::TERMINAL,      "+"};
@@ -46,11 +46,17 @@ int main(void) {
   Symbol Dollar = {SymbolType::TERMINAL,      "$"};
   Item I(E_, {{E}}, 0);
 
-  std::set<Item> set = gr.Closure({I});
-  std::set<Item> set2 = gr.Goto(set, T);
+  // std::set<Item> set = gr.Closure({I});
+  // std::set<Item> set2 = gr.Goto(set, T);
 
-  for (const auto& element : set2) {
-    element.printItem();
+  // for (const auto& element : set2) {
+  //   element.printItem();
+  // }
+
+  std::cout << "start: " << std::endl;
+  std::set<Symbol> set3 = gr.First(E);
+  for (const auto& element : set3) {
+    std::cout << element.name_ << " ";
   }
 
   return 0;

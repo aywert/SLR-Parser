@@ -96,6 +96,7 @@ class Grammar {
 
   std::set<Item> Closure(const std::set<Item>& items);
   std::set<Item> Goto(const std::set<Item>& items, const Symbol& smbl);
+  std::set<Symbol> First(const Symbol& smbl);
   //Getting productions for every NonTerm Symbols
   std::vector<std::vector<Symbol>> getProductions(const Symbol& nonTerm) const;
 };

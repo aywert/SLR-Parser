@@ -15,9 +15,7 @@ public:
   }
 
   Token getNextToken() {
-    std::cout << "Calling yylex()..." << std::endl;
     int token_t = yylex();  // Получаем код токена от Flex
-    std::cout << "yylex() returned: " << token_t << std::endl;
     
     TokenType tokenType = static_cast<TokenType>(token_t); // Преобразуем код в тип токена
     // Вручную создаем структуру Token

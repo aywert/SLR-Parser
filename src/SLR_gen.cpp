@@ -65,7 +65,6 @@ std::set<Item> Grammar::Goto(const std::set<Item>& items, const Symbol& smbl) {
 
 std::set<Item> Grammar::Closure(const std::set<Item>& items) {
   std::set<Item> result = items;  // starting with given set
-  
   std::vector<Item> item_lst(items.begin(), items.end()); //lst contains Item yet to process;
 
   while (!item_lst.empty()) {
@@ -111,6 +110,42 @@ std::vector<std::vector<Symbol>> Grammar::getProductions(const Symbol& nonTerm) 
   auto range = productions.equal_range(nonTerm);
   for (auto it = range.first; it != range.second; ++it) {
     result.push_back(it->second);
+  }
+
+  return result;
+}
+
+std::set<Symbol> Grammar::First(const Symbol& smbl) {
+  if (smbl.type_ == SymbolType::TERMINAL) {
+    return {smbl}; // First of a terminal is the terminal itself
+  }
+
+  std::set<Symbol> result = {};  // empty set for terminals
+  std::set<Symbol> processed_smbl{}; // to account for every symbol processed
+  std::vector<Symbol> smbl_lst = {smbl}; //lst contains Item yet to process;
+
+  while (!smbl_lst.empty()) {
+    std::vector<Symbol> new_smbl_lst; //contains items which wasn't processed
+
+    for (const Symbol& smbl_: smbl_lst) { //for each symbol
+      if (smbl_.type_ == SymbolType::TERMINAL) {
+        result.insert(smbl_); // First of epsilon is epsilon itself
+      } 
+      else {
+        if (processed_smbl.find(smbl_) == processed_smbl.end()) {
+          auto range = productions.equal_range(smbl_); // getting productions for smbl_
+
+          for (auto it = range.first; it != range.second; ++it) {        
+            // Добавляем первые символы пораждаемые продукцией
+            new_smbl_lst.push_back(it->second[0]);
+          }
+
+          processed_smbl.insert(smbl_);
+        }
+      }
+    }
+
+    smbl_lst = std::move(new_smbl_lst);
   }
 
   return result;
