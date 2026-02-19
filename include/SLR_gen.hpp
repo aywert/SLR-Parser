@@ -50,7 +50,17 @@ struct Item {
 
     return {SymbolType::TERMINAL, ""}; // empty symbol if dot is at the end
   }
-  
+
+  void printItem() const {
+    std::cout << left_.name_ << " -> ";
+    for (size_t i = 0; i < right_.size(); i++) {
+      if (i == dot_pos_) printf("#");
+      std::cout << right_[i].name_;
+    }
+
+    std::cout << std::endl;
+  }
+
   bool isComplete() const {
     return dot_pos_ == right_.size();
   }
@@ -60,7 +70,13 @@ struct Item {
     dot_pos_++;
   }
 
-  Item() = default;
+  bool operator<(const Item& other) const {
+    return this->right_ < other.right_;
+  };
+  
+  Item(const Item& I) : 
+  left_(I.left_), right_(I.right_), dot_pos_(I.dot_pos_) {};
+
   Item(const Symbol& left, const std::vector<Symbol>& right, int dot_pos) : 
   left_(left), right_(right), dot_pos_(dot_pos) {};
   
@@ -72,11 +88,11 @@ class Grammar {
 
   std::unordered_multimap<Symbol, std::vector<Symbol>, SymbolHash> productions {}; //production: left -> right
   
-
   public:
 
   Grammar();
 
+  std::set<Item> Closure(const std::set<Item>& items);
   //Getting productions for every NonTerm Symbols
   std::vector<std::vector<Symbol>> getProductions(const Symbol& nonTerm) const {
     std::vector<std::vector<Symbol>> result;

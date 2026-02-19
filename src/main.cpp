@@ -32,5 +32,25 @@ int main(void) {
     std::cout << std::endl;
   }
 
+  Symbol E_     = {SymbolType::NON_TERMINAL,  "E'"};
+  Symbol E      = {SymbolType::NON_TERMINAL,  "E"};
+  Symbol T      = {SymbolType::NON_TERMINAL,  "T"};
+  Symbol F      = {SymbolType::NON_TERMINAL,  "F"};
+  Symbol Plus   = {SymbolType::TERMINAL,      "+"};
+  Symbol Minus  = {SymbolType::TERMINAL,      "-"};
+  Symbol Mul    = {SymbolType::TERMINAL,      "*"};
+  Symbol Div    = {SymbolType::TERMINAL,      "/"};
+  Symbol LParen = {SymbolType::TERMINAL,      "("};
+  Symbol RParen = {SymbolType::TERMINAL,      ")"};
+  Symbol Id     = {SymbolType::TERMINAL,      "id"};
+  Symbol Dollar = {SymbolType::TERMINAL,      "$"};
+  Item I(E_, {{E}}, 0);
+
+  std::set set = gr.Closure({I});
+
+  for (const auto& element : set) {
+    element.printItem();
+  }
+
   return 0;
 }

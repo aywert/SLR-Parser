@@ -42,3 +42,39 @@ Grammar::Grammar() {
   productions.insert({F, {LParen, E, RParen}});  // F → ( E )
   productions.insert({F, {Id}});                 // F → id
 } 
+
+std::set<Item> Grammar::Closure(const std::set<Item>& items) {
+  std::set<Item> result = items;  // starting with given set
+  
+  std::vector<Item> item_lst(items.begin(), items.end()); //lst contains Item yet to process;
+
+  while (!item_lst.empty()) {
+    std::vector<Item> new_item_lst; //contains items which wasn't processed
+  
+    for (const Item& item: item_lst) { //iteration for each item
+      if (!item.isComplete()) {
+        Symbol current_smbl = item.getSymbolAfterDot(); //need to find every grammar rule which start with current_smbl
+        
+        if (current_smbl.type_ == SymbolType::NON_TERMINAL) {
+          // Получаем все правила грамматики для этого нетерминала
+          // Например, для E получим правила: E → E+T и E → T
+          auto productions = getProductions(current_smbl);
+
+          // Для каждого правила создаем новый пункт с точкой в начале
+          for (const auto& prod : productions) {
+            Item newItem(current_smbl, prod, 0);
+            
+            // Добавляем новый пункт, если его еще нет
+            if (result.insert(newItem).second) {
+              new_item_lst.push_back(newItem);
+            }
+          }
+        }
+      }
+    }
+
+    item_lst = std::move(new_item_lst);
+  }
+
+  return result;
+}
