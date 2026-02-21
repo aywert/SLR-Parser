@@ -81,12 +81,12 @@ clean: CMakeFiles/SLR.dir/clean
 CMakeFiles/SLR.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/michael/Desktop/Projects/2_course/SBER/SLR/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target SLR"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/michael/Desktop/Projects/2_course/SBER/SLR/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target SLR"
 .PHONY : CMakeFiles/SLR.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SLR.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/michael/Desktop/Projects/2_course/SBER/SLR/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michael/Desktop/Projects/2_course/SBER/SLR/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SLR.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/michael/Desktop/Projects/2_course/SBER/SLR/build/CMakeFiles 0
 .PHONY : CMakeFiles/SLR.dir/rule

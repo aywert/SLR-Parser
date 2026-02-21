@@ -1,0 +1,1016 @@
+Closure begin--------
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+Closure end----------
+Symbol name: $
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: (
+Closure begin--------
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+Closure end----------
+States updated
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+---Symbol name: )
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: *
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: +
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: -
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: /
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: id
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: E
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: E'
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: F
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: T
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: $
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: (
+Closure begin--------
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+Closure end----------
+Symbol name: )
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: *
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: +
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: -
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: /
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+Symbol name: id
+Closure begin--------
+F -> id●
+Closure end----------
+States updated
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+---Symbol name: E
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: E'
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: F
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: T
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: $
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: (
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: )
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: *
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: +
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: -
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: /
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: id
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: E
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: E'
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: F
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+
+Symbol name: T
+Closure begin--------
+sorry i am empty
+Closure end----------
+See why closure is sorry
+State 0:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+E' -> ●E
+F -> ●(E)
+F -> ●id
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 1:
+E -> ●E+T
+E -> ●E-T
+E -> ●T
+F -> ●(E)
+F -> ●id
+F -> (●E)
+T -> ●F
+T -> ●T*F
+T -> ●T/F
+
+State 2:
+F -> id●
+

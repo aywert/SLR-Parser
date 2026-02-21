@@ -2,7 +2,8 @@
 #include <FlexLexer.h>
 #include <fstream>
 #include "lexer.hpp"
-#include "SLR_gen.hpp"
+#include "Grammar.hpp"
+#include "syntax_analyzer.hpp"
 
 int main(void) {
 
@@ -44,20 +45,31 @@ int main(void) {
   Symbol RParen = {SymbolType::TERMINAL,      ")"};
   Symbol Id     = {SymbolType::TERMINAL,      "id"};
   Symbol Dollar = {SymbolType::TERMINAL,      "$"};
-  Item I(E_, {{E}}, 0);
+  Item I(E, {{E, Minus, T}}, 0);
 
   // std::set<Item> set = gr.Closure({I});
-  // std::set<Item> set2 = gr.Goto(set, T);
+  // std::set<Item> set2 = gr.Goto(set, E);
 
+  // printf("Closure\n");
+  // for (const auto& element : set) {
+  //   element.printItem();
+  // }
+  // printf("Goto\n");
   // for (const auto& element : set2) {
   //   element.printItem();
   // }
 
-  std::cout << "FOLLOW: ";
-  std::set<Symbol> set3 = gr.Follow(T);
-  for (const auto& element : set3) {
-    std::cout << element.name_ << " ";
-  }
+  // std::cout << "FOLLOW: ";
+  // std::set<Symbol> set3 = gr.Follow(T);
+  // for (const auto& element : set3) {
+  //   std::cout << element.name_ << " ";
+  // }
+
+  SyntaxAnalyzer sa(gr);
+  sa.BuildAutomation();
+
+  // Symbol after = I.getSymbolAfterDot();
+  // std::cout << after.name_;
 
   return 0;
 }

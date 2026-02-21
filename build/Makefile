@@ -129,29 +129,29 @@ SLR/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/build
 .PHONY : SLR/fast
 
-src/SLR_gen.o: src/SLR_gen.cpp.o
-.PHONY : src/SLR_gen.o
+src/Grammar.o: src/Grammar.cpp.o
+.PHONY : src/Grammar.o
 
 # target to build an object file
-src/SLR_gen.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/SLR_gen.cpp.o
-.PHONY : src/SLR_gen.cpp.o
+src/Grammar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/Grammar.cpp.o
+.PHONY : src/Grammar.cpp.o
 
-src/SLR_gen.i: src/SLR_gen.cpp.i
-.PHONY : src/SLR_gen.i
+src/Grammar.i: src/Grammar.cpp.i
+.PHONY : src/Grammar.i
 
 # target to preprocess a source file
-src/SLR_gen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/SLR_gen.cpp.i
-.PHONY : src/SLR_gen.cpp.i
+src/Grammar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/Grammar.cpp.i
+.PHONY : src/Grammar.cpp.i
 
-src/SLR_gen.s: src/SLR_gen.cpp.s
-.PHONY : src/SLR_gen.s
+src/Grammar.s: src/Grammar.cpp.s
+.PHONY : src/Grammar.s
 
 # target to generate assembly for a file
-src/SLR_gen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/SLR_gen.cpp.s
-.PHONY : src/SLR_gen.cpp.s
+src/Grammar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/Grammar.cpp.s
+.PHONY : src/Grammar.cpp.s
 
 src/lexer.o: src/lexer.cpp.o
 .PHONY : src/lexer.o
@@ -201,6 +201,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/syntax_analyzer.o: src/syntax_analyzer.cpp.o
+.PHONY : src/syntax_analyzer.o
+
+# target to build an object file
+src/syntax_analyzer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o
+.PHONY : src/syntax_analyzer.cpp.o
+
+src/syntax_analyzer.i: src/syntax_analyzer.cpp.i
+.PHONY : src/syntax_analyzer.i
+
+# target to preprocess a source file
+src/syntax_analyzer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.i
+.PHONY : src/syntax_analyzer.cpp.i
+
+src/syntax_analyzer.s: src/syntax_analyzer.cpp.s
+.PHONY : src/syntax_analyzer.s
+
+# target to generate assembly for a file
+src/syntax_analyzer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SLR.dir/build.make CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.s
+.PHONY : src/syntax_analyzer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -210,15 +234,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... SLR"
-	@echo "... src/SLR_gen.o"
-	@echo "... src/SLR_gen.i"
-	@echo "... src/SLR_gen.s"
+	@echo "... src/Grammar.o"
+	@echo "... src/Grammar.i"
+	@echo "... src/Grammar.s"
 	@echo "... src/lexer.o"
 	@echo "... src/lexer.i"
 	@echo "... src/lexer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/syntax_analyzer.o"
+	@echo "... src/syntax_analyzer.i"
+	@echo "... src/syntax_analyzer.s"
 .PHONY : help
 
 

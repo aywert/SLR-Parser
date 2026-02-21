@@ -8,9 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/SLR_gen.cpp" "CMakeFiles/SLR.dir/src/SLR_gen.cpp.o" "gcc" "CMakeFiles/SLR.dir/src/SLR_gen.cpp.o.d"
+  "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/Grammar.cpp" "CMakeFiles/SLR.dir/src/Grammar.cpp.o" "gcc" "CMakeFiles/SLR.dir/src/Grammar.cpp.o.d"
   "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/lexer.cpp" "CMakeFiles/SLR.dir/src/lexer.cpp.o" "gcc" "CMakeFiles/SLR.dir/src/lexer.cpp.o.d"
   "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/main.cpp" "CMakeFiles/SLR.dir/src/main.cpp.o" "gcc" "CMakeFiles/SLR.dir/src/main.cpp.o.d"
+  "/home/michael/Desktop/Projects/2_course/SBER/SLR/src/syntax_analyzer.cpp" "CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o" "gcc" "CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

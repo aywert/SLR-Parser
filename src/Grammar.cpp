@@ -1,5 +1,5 @@
 
-#include "SLR_gen.hpp"
+#include "Grammar.hpp"
 
 Grammar::Grammar() {
   Symbol E_     = {SymbolType::NON_TERMINAL,  "E'"};
@@ -43,14 +43,14 @@ Grammar::Grammar() {
   productions.insert({F, {Id}});                 // F → id
 } 
 
-std::set<Item> Grammar::Goto(const std::set<Item>& items, const Symbol& smbl) {
+std::set<Item> Grammar::Goto(const std::set<Item>& items, const Symbol& smbl) const{
   std::set<Item> result{};
   // Проходим по каждому пункту из входного множества
   for (const Item& item : items) { // for each item
     // Проверяем: пункт не завершен И символ после точки равен искомому
     if (!item.isComplete() && item.getSymbolAfterDot() == smbl) {
       // Создаем новый пункт - копию текущего
-      Item newItem = item;  \
+      Item newItem = item;  
       // Передвигаем точку на одну позицию вперед
       newItem.moveDot();
       // Добавляем в ядро
@@ -63,7 +63,7 @@ std::set<Item> Grammar::Goto(const std::set<Item>& items, const Symbol& smbl) {
 
 }
 
-std::set<Item> Grammar::Closure(const std::set<Item>& items) {
+std::set<Item> Grammar::Closure(const std::set<Item>& items) const {
   std::set<Item> result = items;  // starting with given set
   std::vector<Item> item_lst(items.begin(), items.end()); //lst contains Item yet to process;
 
@@ -73,12 +73,12 @@ std::set<Item> Grammar::Closure(const std::set<Item>& items) {
     for (const Item& item: item_lst) { //for each item
       if (!item.isComplete()) {
         Symbol current_smbl = item.getSymbolAfterDot(); //need to find every grammar rule which start with current_smbl
-        
+       
         if (current_smbl.type_ == SymbolType::NON_TERMINAL) {
           // Получаем все правила грамматики для этого нетерминала
           // Например, для E получим правила: E → E+T и E → T
           auto productions = getProductions(current_smbl);
-
+          //printProduction(productions);
           // Для каждого правила создаем новый пункт с точкой в начале
           for (const auto& prod : productions) {
             Item newItem(current_smbl, prod, 0);
@@ -94,6 +94,17 @@ std::set<Item> Grammar::Closure(const std::set<Item>& items) {
 
     item_lst = std::move(new_item_lst);
   }
+
+  // printf("Closure begin--------\n");
+
+  // if (result.empty()) {printf("sorry i am empty\n");}
+  // for (const auto& element : result) {
+  //   element.printItem();
+  // }
+
+  // printf("Closure end----------\n");
+
+
 
   return result;
 }
@@ -115,7 +126,7 @@ std::vector<std::vector<Symbol>> Grammar::getProductions(const Symbol& nonTerm) 
   return result;
 }
 
-std::set<Symbol> Grammar::First(const Symbol& smbl) {
+std::set<Symbol> Grammar::First(const Symbol& smbl) const{
   if (smbl.type_ == SymbolType::TERMINAL) {
     return {smbl}; // First of a terminal is the terminal itself
   }
@@ -151,7 +162,7 @@ std::set<Symbol> Grammar::First(const Symbol& smbl) {
   return result;
 }
 
-std::set<Symbol> Grammar::Follow(const Symbol& smbl) {
+std::set<Symbol> Grammar::Follow(const Symbol& smbl) const {
   if (smbl.type_ == SymbolType::TERMINAL) return {};
   if (smbl.name_ == std::string("E'")) {
     return {Symbol(SymbolType::TERMINAL, "$")};
@@ -191,4 +202,21 @@ std::set<Symbol> Grammar::Follow(const Symbol& smbl) {
   }
   
   return result;
+}
+
+std::set<Symbol> Grammar::getAllSymbols() const {
+  std::set<Symbol> allSymbols = terminals;
+  allSymbols.insert(nonTerminals.begin(), nonTerminals.end());
+  return allSymbols;
+}
+
+void Grammar::printProduction(std::vector<std::vector<Symbol>>& lst) const {
+  printf("Products:\n");
+  for (const auto& line: lst) {
+    for (const auto& smbl: line) {
+      std::cout << smbl.name_ << " ";
+    }
+  }
+
+  printf("\n");
 }

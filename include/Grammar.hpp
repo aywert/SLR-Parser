@@ -1,5 +1,5 @@
-#ifndef SLR_GEN_HPP
-#define SLR_GEN_HPP
+#ifndef GRAMMAR_HPP
+#define GRAMMAR_HPP
 
 #include <iostream>
 #include <vector>
@@ -17,10 +17,13 @@ struct Symbol {
   SymbolType type_; //TERMINAL/NON_TERMINAL
   std::string name_; // F/T/id and so on
 
-  bool operator==(const Symbol& other) const { return name_ == other.name_; } // For unordered_map
+  bool operator==(const Symbol& other) const { 
+    return type_ == other.type_ && name_ == other.name_;
+  } // For unordered_map
    
   bool operator<(const Symbol& other) const { // For std::set
-      return name_ < other.name_;
+    //if (type_ != other.type_) return type_ < other.type_;
+    return name_ < other.name_;
   }
 
   Symbol() = default;
@@ -34,9 +37,17 @@ struct Symbol {
   }
 };
 
+// struct SymbolHash {
+//   size_t operator()(const Symbol& s) const {
+//     return std::hash<std::string>{}(s.name_);
+//   }
+// };
+
 struct SymbolHash {
   size_t operator()(const Symbol& s) const {
-    return std::hash<std::string>{}(s.name_);
+    size_t h1 = std::hash<int>{}(static_cast<int>(s.type_));
+    size_t h2 = std::hash<std::string>{}(s.name_);
+    return h1 ^ (h2 << 1);
   }
 };
 
@@ -45,7 +56,19 @@ struct Item {
   std::vector<Symbol> right_;
   int dot_pos_;
 
-  bool operator<(const Item& other) const { return this->right_ < other.right_;};
+  bool operator==(const Item& other) const { 
+    return (left_ == other.left_) && (right_ == other.right_) && (dot_pos_ == other.dot_pos_); 
+  }
+
+  bool operator<(const Item& other) const {
+    if (left_ < other.left_) return true;
+    if (other.left_ < left_) return false;
+    
+    if (dot_pos_ < other.dot_pos_) return true;
+    if (other.dot_pos_ < dot_pos_) return false;
+    
+    return right_ < other.right_;
+  };
 
   Item(const Item& I) : 
         left_(I.left_), right_(I.right_), dot_pos_(I.dot_pos_) {};
@@ -57,7 +80,7 @@ struct Item {
     if (dot_pos_ < right_.size()) {
       return right_[dot_pos_];
     }
-
+    printf("oMGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGg\n\n\n");
     return {SymbolType::TERMINAL, ""}; // empty symbol if dot is at the end
   }
 
@@ -95,13 +118,16 @@ class Grammar {
   public:
 
   Grammar();
+  Grammar(const Grammar& gr) : terminals(gr.terminals), nonTerminals(gr.nonTerminals), productions(gr.productions) {};
 
-  std::set<Item>   Closure(const std::set<Item>& items);
-  std::set<Item>   Goto(const std::set<Item>& items, const Symbol& smbl);
-  std::set<Symbol> First(const Symbol& smbl);
-  std::set<Symbol> Follow(const Symbol& smbl);
+  std::set<Item>   Closure(const std::set<Item>& items) const;
+  std::set<Item>   Goto(const std::set<Item>& items, const Symbol& smbl) const;
+  std::set<Symbol> First(const Symbol& smbl) const;
+  std::set<Symbol> Follow(const Symbol& smbl) const;
   //Getting productions for every NonTerm Symbols
   std::vector<std::vector<Symbol>> getProductions(const Symbol& nonTerm) const;
+  std::set<Symbol> getAllSymbols() const;
+  void printProduction(std::vector<std::vector<Symbol>>& lst) const;
 };
 
 #endif

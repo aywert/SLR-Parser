@@ -1,7 +1,8 @@
-CMakeFiles/SLR.dir/src/main.cpp.o: \
- /home/michael/Desktop/Projects/2_course/SBER/SLR/src/main.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
- /usr/include/c++/13/bits/requires_hosted.h \
+CMakeFiles/SLR.dir/src/Grammar.cpp.o: \
+ /home/michael/Desktop/Projects/2_course/SBER/SLR/src/Grammar.cpp \
+ /usr/include/stdc-predef.h \
+ /home/michael/Desktop/Projects/2_course/SBER/SLR/include/Grammar.hpp \
+ /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -149,23 +150,14 @@ CMakeFiles/SLR.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
- /usr/include/c++/13/bits/istream.tcc /usr/include/FlexLexer.h \
- /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc \
- /home/michael/Desktop/Projects/2_course/SBER/SLR/include/lexer.hpp \
- /usr/include/c++/13/queue /usr/include/c++/13/deque \
+ /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/vector \
  /usr/include/c++/13/bits/stl_uninitialized.h \
- /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
- /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h \
- /home/michael/Desktop/Projects/2_course/SBER/SLR/include/token.hpp \
- /home/michael/Desktop/Projects/2_course/SBER/SLR/include/Grammar.hpp \
- /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/algorithm \
+ /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
  /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
@@ -180,9 +172,4 @@ CMakeFiles/SLR.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/set \
  /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
- /home/michael/Desktop/Projects/2_course/SBER/SLR/include/syntax_analyzer.hpp \
- /usr/include/c++/13/stack /usr/include/c++/13/bits/stl_stack.h \
- /home/michael/Desktop/Projects/2_course/SBER/SLR/include/Grammar.hpp \
- /usr/include/c++/13/map /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h
+ /usr/include/c++/13/bits/stl_multiset.h
