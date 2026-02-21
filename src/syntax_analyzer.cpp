@@ -12,7 +12,7 @@ void SyntaxAnalyzer::BuildAutomation() {
   size_t current = 0; //position of state we are currently processing in states vector
 
   while (current < states.size()) {
-      const auto& state = states[current];
+      const auto state = states[current];
       
       for (const auto& symbol : grammar.getAllSymbols()) {
         //std::cout << "Symbol name: " << symbol.name_ << "\n";
