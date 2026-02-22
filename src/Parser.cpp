@@ -5,51 +5,54 @@ void Parser::execParse() {
   if (tokens.size() < 1) return;
 
   stack_.push({0, "$"});
-  int pos = 0; // position in input buffer
+  // position in input buffer
+  int pos = 0; 
 
   std::string currentToken = tokens[pos].name_;
 
   while (true) {
-    int currentState = stack_.top().state_; // take state from the stack
+    // take state from the stack
+    int currentState = stack_.top().state_; 
     
     // Looking through the actionTable map to get action to execute
-    auto actionIt = SLR_tg_.actionTable.find({currentState, currentToken});
+    struct Action act;
 
-    if (actionIt == SLR_tg_.actionTable.end()) {
-      std::cout << "Mistake\n";
+    try {
+      act = findAction(currentState, currentToken);
+    } 
+    catch (std::logic_error& err) { 
+      std::cerr << "Parser error: " << err.what() << std::endl;
       break;
-    }
+    };
     
-    std::string action = actionIt->second;
 
-    // Printing current state
     printRow(getStackString(), getInputString(pos, tokens), 
-              action[0] == 's' ? "Shift" : 
-              action[0] == 'r' ? "Reduce " + getRuleString(std::stoi(action.substr(1))) : 
-              action);
-    
-    if (action[0] == 's') {
-      //action shift: putting to the stack same Token with state provided in actionTable
-      int nextState = std::stoi(action.substr(1));
-      stack_.push(StackItem(nextState, currentToken));   
-      
-      // taking new token
-      pos++;
-      currentToken = (pos < tokens.size()) ? tokens[pos].name_ : "$";
+              act.type == ActionType::Shift  ? "Shift" : 
+              act.type == ActionType::Reduce ? "Reduce " + getRuleString(act.number) : "acc");
+
+    switch (act.type) {
+      case ActionType::Shift: {
+        int nextState = act.number;
+        stack_.push(StackItem(nextState, currentToken));   
         
-    } else if (action[0] == 'r') {
-        // action reduce: replacing
-        int ruleNum = std::stoi(action.substr(1)); 
+        // taking new token
+        pos++;
+        currentToken = (pos < tokens.size()) ? tokens[pos].name_ : "$";
+        break;
+      }
+
+      case ActionType::Reduce: {
+        // action reduce
+        int ruleNum = act.number; 
         const auto& rule = SLR_tg_.grammarRules[ruleNum];
         int rightLength = rule.right_.size();
         
-        for (int i = 0; i < rightLength; i++) {
-          stack_.pop(); // getting rid of sequence of Tokens
-        }
+        // getting rid of sequence of Tokens
+        for (int i = 0; i < rightLength; i++) { stack_.pop(); }
 
         if (stack_.empty()) {
           std::cout << "Mistake: empty stack after reduction\n";
-          break;
+          return;
         }
         
         int prevState = stack_.top().state_;
@@ -58,20 +61,43 @@ void Parser::execParse() {
         if (gotoIt == SLR_tg_.gotoTable.end()) {
           std::cout << "Mistake: no GOTO from this state" << prevState 
                     << " for " << rule.left_.name_ << "\n";
-          break;
+          return;
         }
         
         int newState = gotoIt->second;
         
         stack_.push(StackItem(newState, rule.left_.name_));
-            
-        } 
+        break;
+      }
 
-        else if (action == "acc") {
-          std::cout << "Ready!\n";
-          break;
-        }
+      case ActionType::Accept: {
+        std::cout << "Ready!\n";
+        return;
+      }
+
+      case ActionType::Mistake: {
+        std::cerr << "Mistake while parsing\n";
+        return;
+      }
+
+      default: std::cerr << " default Mistake while parsing\n"; break;
+    }
   }
+}
+
+struct Action Parser::findAction(int currentState, std::string& currentToken) const {
+  auto actionIt = SLR_tg_.actionTable.find({currentState, currentToken});
+
+  if (actionIt == SLR_tg_.actionTable.end()) {
+    throw std::logic_error("no such elements");
+  }
+  
+  std::string action = actionIt->second;
+
+  if      (action[0] == 's') return {ActionType::Shift,  std::stoi(action.substr(1))};
+  else if (action[0] == 'r') return {ActionType::Reduce, std::stoi(action.substr(1))};
+  else if (action == "acc")  return {ActionType::Accept,  0};
+  else                       return {ActionType::Mistake, 0};
 }
 
 std::string Parser::getStackString() const {

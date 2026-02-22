@@ -6,7 +6,7 @@
 #include "Grammar.hpp"
 
 
-constexpr const char* latex_file = "./output/latex.tex";
+constexpr const char* latex_file = "./output/SLRtable.tex";
 constexpr const char* latex_dir  = "output";
 
 class SLRtableGen {
@@ -18,7 +18,7 @@ class SLRtableGen {
 
    
   public: 
-    // Таблицы для парсинга
+    // Tables for parsing (creating them open as they're demanded for class Parser)
     std::map<std::pair<int, Symbol>, std::string> actionTable;
     std::map<std::pair<int, Symbol>, int> gotoTable;
 
