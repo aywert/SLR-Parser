@@ -29,13 +29,14 @@ int main(int argc, char** argv) {
   sa.BuildAutomation();
   sa.createSLRTable();
   
-  //lexer.showTokens();
   Parser prs(lexer, sa);
   prs.execParse();
 
-  // use LatexDumps only from the root of the project like this: ./build/SLR input.txt
-  //sa.LatexDump(slr_latex_file, slr_latex_dir);
-  // prs.LatexDump(parse_latex_file, parse_latex_dir);
+  #ifdef PDF_CREATE
+  use LatexDumps only from the root of the project like this: ./build/SLR input.txt
+  sa.LatexDump(slr_latex_file, slr_latex_dir);
+  prs.LatexDump(parse_latex_file, parse_latex_dir);
+  #endif
 
 
   size_t hash = prs.GetHash();

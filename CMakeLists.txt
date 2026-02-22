@@ -9,7 +9,7 @@ FLEX_TARGET(Lexer ${CMAKE_CURRENT_SOURCE_DIR}/include/gram.l ${CMAKE_CURRENT_SOU
 
 add_executable(SLR src/main.cpp ${FLEX_Lexer_OUTPUTS} src/Grammar.cpp src/SLRtableGen.cpp src/Parser.cpp)
 
-option(PDF_CREATE "Creating prf files immedietly" OFF)
+option(PDF_CREATE "Creating prf files immediately" OFF)
 
 if (PDF_CREATE) 
   target_compile_definitions(SLR PRIVATE PDF_CREATE)

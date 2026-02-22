@@ -42,7 +42,7 @@ class SLRtableGen {
 };
 
 
-class LatexCreater {
+class LatexCreater final {
   std::ofstream file_;
   std::string file_name_;
   std::string dir_name_;

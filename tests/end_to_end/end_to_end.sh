@@ -4,12 +4,12 @@ set -eu
 SLR_BIN="${1:-}"
 
 if [ -z "$SLR_BIN" ]; then
-  echo "ERROR: Matrix binary path not provided" >&2
+  echo "ERROR: binary path not provided" >&2
   exit 1
 fi
 
 if [ ! -x "$SLR_BIN" ]; then
-  echo "ERROR: Matrix binary is not executable or not found: $SLR_BIN" >&2
+  echo "ERROR: binary is not executable or not found: $SLR_BIN" >&2
   exit 1
 fi
 
