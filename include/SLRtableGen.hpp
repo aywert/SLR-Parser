@@ -9,32 +9,36 @@
 constexpr const char* latex_file = "./output/latex.tex";
 constexpr const char* latex_dir  = "output";
 
-class SyntaxAnalyzer final {
+class SLRtableGen {
   const Grammar& grammar;
   std::vector<std::set<Item>> states;
-  std::vector<Item> grammarRules; // as i don't have strict order of rules in Grammar class, 
-                                  //i will create my own vector of rules to be able to refer to them by index  
+    
   std::vector<Symbol> grammarTerminals; 
   std::vector<Symbol> grammarNonTerminals; 
-  // Таблицы для парсинга
-  std::map<std::pair<int, Symbol>, std::string> actionTable;
-  std::map<std::pair<int, Symbol>, int> gotoTable;
-  
-  // Стек парсера
-  std::stack<int> stateStack;
 
+   
   public: 
-    SyntaxAnalyzer(const Grammar& g);
+    // Таблицы для парсинга
+    std::map<std::pair<int, Symbol>, std::string> actionTable;
+    std::map<std::pair<int, Symbol>, int> gotoTable;
+
+    std::vector<Item> grammarRules; // as i don't have strict order of rules in Grammar class, 
+                                  //i will create my own vector of rules to be able to refer to them by index 
+
+    SLRtableGen(const Grammar& g);
+    void createSLRTable();
+
     size_t getGrammarRuleIndex(const Item& item) const;
 
     void BuildAutomation();
     int findStateIndex(const std::set<Item>& state) const;
     std::vector<Symbol> getGrTerminals() const { return grammarTerminals; }
     std::vector<Symbol> getGrNonTerminals() const { return grammarNonTerminals; }
+
     void printTables() const;
     void LatexDump(const char* const  file_name, const char* const dir_name) const;
     void printStates() const;
-    void createSLRTable();
+    
 };
 
 
@@ -60,7 +64,7 @@ class LatexCreater {
       file_ << "\\maketitle\n\n";
     }
 
-    void addTable(const std::vector<std::vector<std::string>>& data, const SyntaxAnalyzer* sa) {
+    void addTable(const std::vector<std::vector<std::string>>& data, const SLRtableGen* sa) {
       file_ << "\\begin{tabular}{|";
       for (size_t i = 0; i < data[0].size(); ++i) file_ << "c|";
       file_ << "}\n\\hline\n";

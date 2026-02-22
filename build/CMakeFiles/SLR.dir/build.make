@@ -115,26 +115,41 @@ CMakeFiles/SLR.dir/src/Grammar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SLR.dir/src/Grammar.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michael/Desktop/Projects/2_course/SBER/SLR/src/Grammar.cpp -o CMakeFiles/SLR.dir/src/Grammar.cpp.s
 
-CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o: CMakeFiles/SLR.dir/flags.make
-CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/SLR/src/syntax_analyzer.cpp
-CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o: CMakeFiles/SLR.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michael/Desktop/Projects/2_course/SBER/SLR/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o -MF CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o.d -o CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o -c /home/michael/Desktop/Projects/2_course/SBER/SLR/src/syntax_analyzer.cpp
+CMakeFiles/SLR.dir/src/SLRtableGen.cpp.o: CMakeFiles/SLR.dir/flags.make
+CMakeFiles/SLR.dir/src/SLRtableGen.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/SLR/src/SLRtableGen.cpp
+CMakeFiles/SLR.dir/src/SLRtableGen.cpp.o: CMakeFiles/SLR.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michael/Desktop/Projects/2_course/SBER/SLR/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SLR.dir/src/SLRtableGen.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SLR.dir/src/SLRtableGen.cpp.o -MF CMakeFiles/SLR.dir/src/SLRtableGen.cpp.o.d -o CMakeFiles/SLR.dir/src/SLRtableGen.cpp.o -c /home/michael/Desktop/Projects/2_course/SBER/SLR/src/SLRtableGen.cpp
 
-CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michael/Desktop/Projects/2_course/SBER/SLR/src/syntax_analyzer.cpp > CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.i
+CMakeFiles/SLR.dir/src/SLRtableGen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SLR.dir/src/SLRtableGen.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michael/Desktop/Projects/2_course/SBER/SLR/src/SLRtableGen.cpp > CMakeFiles/SLR.dir/src/SLRtableGen.cpp.i
 
-CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michael/Desktop/Projects/2_course/SBER/SLR/src/syntax_analyzer.cpp -o CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.s
+CMakeFiles/SLR.dir/src/SLRtableGen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SLR.dir/src/SLRtableGen.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michael/Desktop/Projects/2_course/SBER/SLR/src/SLRtableGen.cpp -o CMakeFiles/SLR.dir/src/SLRtableGen.cpp.s
+
+CMakeFiles/SLR.dir/src/Parser.cpp.o: CMakeFiles/SLR.dir/flags.make
+CMakeFiles/SLR.dir/src/Parser.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/SLR/src/Parser.cpp
+CMakeFiles/SLR.dir/src/Parser.cpp.o: CMakeFiles/SLR.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/michael/Desktop/Projects/2_course/SBER/SLR/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SLR.dir/src/Parser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SLR.dir/src/Parser.cpp.o -MF CMakeFiles/SLR.dir/src/Parser.cpp.o.d -o CMakeFiles/SLR.dir/src/Parser.cpp.o -c /home/michael/Desktop/Projects/2_course/SBER/SLR/src/Parser.cpp
+
+CMakeFiles/SLR.dir/src/Parser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SLR.dir/src/Parser.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michael/Desktop/Projects/2_course/SBER/SLR/src/Parser.cpp > CMakeFiles/SLR.dir/src/Parser.cpp.i
+
+CMakeFiles/SLR.dir/src/Parser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SLR.dir/src/Parser.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michael/Desktop/Projects/2_course/SBER/SLR/src/Parser.cpp -o CMakeFiles/SLR.dir/src/Parser.cpp.s
 
 # Object files for target SLR
 SLR_OBJECTS = \
 "CMakeFiles/SLR.dir/src/main.cpp.o" \
 "CMakeFiles/SLR.dir/src/lexer.cpp.o" \
 "CMakeFiles/SLR.dir/src/Grammar.cpp.o" \
-"CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o"
+"CMakeFiles/SLR.dir/src/SLRtableGen.cpp.o" \
+"CMakeFiles/SLR.dir/src/Parser.cpp.o"
 
 # External object files for target SLR
 SLR_EXTERNAL_OBJECTS =
@@ -142,11 +157,12 @@ SLR_EXTERNAL_OBJECTS =
 SLR: CMakeFiles/SLR.dir/src/main.cpp.o
 SLR: CMakeFiles/SLR.dir/src/lexer.cpp.o
 SLR: CMakeFiles/SLR.dir/src/Grammar.cpp.o
-SLR: CMakeFiles/SLR.dir/src/syntax_analyzer.cpp.o
+SLR: CMakeFiles/SLR.dir/src/SLRtableGen.cpp.o
+SLR: CMakeFiles/SLR.dir/src/Parser.cpp.o
 SLR: CMakeFiles/SLR.dir/build.make
 SLR: /usr/lib/x86_64-linux-gnu/libfl.so
 SLR: CMakeFiles/SLR.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/michael/Desktop/Projects/2_course/SBER/SLR/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable SLR"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/michael/Desktop/Projects/2_course/SBER/SLR/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SLR"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SLR.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

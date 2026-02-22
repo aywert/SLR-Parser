@@ -20,28 +20,30 @@ enum TokenType {
 struct Token final {
   TokenType type_;
   std::string value_;
+  std::string name_; // for parser
   int line_;
 
   public:
-    Token(TokenType type, const char* value, int line) : 
-    type_(type), value_(value), line_(line) {};
+    Token(TokenType type, const char* value, const char* name, int line) : 
+    type_(type), value_(value), name_(name), line_(line) {};
 
     Token(const Token& tkn) : 
-    type_(tkn.type_), value_(tkn.value_), line_(tkn.line_) {};
+    type_(tkn.type_), value_(tkn.value_), name_(tkn.name_),  line_(tkn.line_) {};
 
     Token(Token&& tkn) : 
-    type_(tkn.type_), value_(tkn.value_), line_(tkn.line_) {};
+    type_(tkn.type_), value_(tkn.value_), name_(tkn.name_), line_(tkn.line_) {};
 
     Token& operator=(const Token& tkn) {
       this->type_ = tkn.type_;
       this->value_ = tkn.value_;
+      this->name_ = tkn.name_;
       this->line_ = tkn.line_;
       return *this;
     }
 
     void Dump() const {
-      printf("TOKEN:\ntype: %d\nvalue: %s\nline: %d\n", type_, value_.c_str(), line_);
-      printf("-------");
+      printf("TOKEN:\ntype: %d\nvalue: %s \nname: %s \nline: %d\n", type_, value_.c_str(), name_.c_str(), line_);
+      printf("-------\n");
     }
 
     bool check() {

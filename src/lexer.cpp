@@ -664,7 +664,7 @@ YY_RULE_SETUP
 case 7:
 YY_RULE_SETUP
 #line 19 "/home/michael/Desktop/Projects/2_course/SBER/SLR/include/gram.l"
-{ return NUMBER; }
+{ return IDENTIFIER; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP

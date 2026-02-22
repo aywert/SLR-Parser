@@ -16,7 +16,7 @@
 "("    { return LPAREN;}
 ")"    { return RPAREN; }
 
-[0-9]+  { return NUMBER; }
+[0-9]+  { return IDENTIFIER; }
 
 [a-zA-Z][a-zA-Z0-9]* { return IDENTIFIER; }
 

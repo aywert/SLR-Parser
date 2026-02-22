@@ -27,6 +27,7 @@ struct Symbol {
   }
 
   Symbol() = default;
+  Symbol(const std::string& name) : type_(SymbolType::TERMINAL), name_(name) {}; // constructing terminal if given only name
   Symbol(SymbolType type, const std::string& name) : type_(type), name_(name) {};
   Symbol(const Symbol& sym) : type_(sym.type_), name_(sym.name_) {};
   Symbol(const Symbol&& sym) : type_(sym.type_), name_(sym.name_) {};
