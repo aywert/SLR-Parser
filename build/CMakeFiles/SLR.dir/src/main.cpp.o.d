@@ -183,6 +183,6 @@ CMakeFiles/SLR.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/stl_multiset.h \
  /home/michael/Desktop/Projects/2_course/SBER/SLR/include/syntax_analyzer.hpp \
  /usr/include/c++/13/stack /usr/include/c++/13/bits/stl_stack.h \
- /home/michael/Desktop/Projects/2_course/SBER/SLR/include/Grammar.hpp \
  /usr/include/c++/13/map /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h
+ /usr/include/c++/13/bits/stl_multimap.h \
+ /home/michael/Desktop/Projects/2_course/SBER/SLR/include/Grammar.hpp

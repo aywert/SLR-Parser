@@ -69,7 +69,7 @@ int main(void) {
   sa.BuildAutomation();
 
   sa.createSLRTable();
-  sa.printTables();
+  sa.LatexDump(latex_file, latex_dir);
   // Symbol after = I.getSymbolAfterDot();
   // std::cout << after.name_;
 
