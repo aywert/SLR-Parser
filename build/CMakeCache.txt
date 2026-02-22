@@ -224,6 +224,9 @@ FLEX_INCLUDE_DIR:PATH=/usr/include
 //Path to the fl library
 FL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libfl.so
 
+//Creating prf files immedietly
+PDF_CREATE:BOOL=OFF
+
 //Value Computed by CMake
 SLR_BINARY_DIR:STATIC=/home/michael/Desktop/Projects/2_course/SBER/SLR/build
 
@@ -338,7 +341,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -941,6 +941,7 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
+  /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
@@ -1007,6 +1008,7 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/queue \
   /usr/include/c++/13/set \
+  /usr/include/c++/13/sstream \
   /usr/include/c++/13/stack \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
@@ -1115,6 +1117,8 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
 
+
+/usr/include/c++/13/sstream:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
@@ -1339,6 +1343,8 @@ CMakeFiles/SLR.dir/src/main.cpp.o: /home/michael/Desktop/Projects/2_course/SBER/
 /usr/include/features.h:
 
 /usr/include/c++/13/backward/binders.h:
+
+/usr/include/c++/13/bits/sstream.tcc:
 
 /usr/include/c++/13/cwctype:
 

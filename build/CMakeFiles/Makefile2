@@ -64,15 +64,47 @@ CMAKE_BINARY_DIR = /home/michael/Desktop/Projects/2_course/SBER/SLR/build
 
 # The main recursive "all" target.
 all: CMakeFiles/SLR.dir/all
+all: tests/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: tests/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/SLR.dir/clean
+clean: tests/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory tests
+
+# Recursive "all" directory target.
+tests/all: tests/end_to_end/all
+.PHONY : tests/all
+
+# Recursive "preinstall" directory target.
+tests/preinstall: tests/end_to_end/preinstall
+.PHONY : tests/preinstall
+
+# Recursive "clean" directory target.
+tests/clean: tests/end_to_end/clean
+.PHONY : tests/clean
+
+#=============================================================================
+# Directory level rules for directory tests/end_to_end
+
+# Recursive "all" directory target.
+tests/end_to_end/all:
+.PHONY : tests/end_to_end/all
+
+# Recursive "preinstall" directory target.
+tests/end_to_end/preinstall:
+.PHONY : tests/end_to_end/preinstall
+
+# Recursive "clean" directory target.
+tests/end_to_end/clean:
+.PHONY : tests/end_to_end/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/SLR.dir

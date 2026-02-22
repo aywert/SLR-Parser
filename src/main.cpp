@@ -4,13 +4,19 @@
 // #include "lexer.hpp"
 // #include "Grammar.hpp"
 // #include "SLRtableGen.hpp"
+#include <sstream>
+#include <iostream>
 #include "Parser.hpp"
 
-int main(void) {
+int main(int argc, char** argv) {
 
-  std::ifstream file("input.txt");  // Открываем файл для чтения
+  if(argc != 2) return 0;
+  
+  std::string inputfile_name = argv[1];
+  std::ifstream file(inputfile_name);
     
   if (!file.is_open()) {
+    std::cout <<  inputfile_name << "\n";
     std::cerr << "Sorry couldn't open the file" << std::endl;
     return 1;
   }
@@ -22,14 +28,16 @@ int main(void) {
 
   sa.BuildAutomation();
   sa.createSLRTable();
-  sa.LatexDump(slr_latex_file, slr_latex_dir);
+  
   //lexer.showTokens();
   Parser prs(lexer, sa);
   prs.execParse();
-  prs.LatexDump(parse_latex_file, parse_latex_dir);
-  
-  // Symbol after = I.getSymbolAfterDot();
-  // std::cout << after.name_;
 
-  return 0;
+  // use LatexDumps only from the root of the project like this: ./build/SLR input.txt
+  //sa.LatexDump(slr_latex_file, slr_latex_dir);
+  // prs.LatexDump(parse_latex_file, parse_latex_dir);
+
+
+  size_t hash = prs.GetHash();
+  std::cout << hash;
 }

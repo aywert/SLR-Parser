@@ -9,9 +9,18 @@ FLEX_TARGET(Lexer ${CMAKE_CURRENT_SOURCE_DIR}/include/gram.l ${CMAKE_CURRENT_SOU
 
 add_executable(SLR src/main.cpp ${FLEX_Lexer_OUTPUTS} src/Grammar.cpp src/SLRtableGen.cpp src/Parser.cpp)
 
+option(PDF_CREATE "Creating prf files immedietly" OFF)
+
+if (PDF_CREATE) 
+  target_compile_definitions(SLR PRIVATE PDF_CREATE)
+endif()
+
 
 target_include_directories(SLR PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 target_link_libraries(SLR PRIVATE ${FLEX_LIBRARIES})
+
+enable_testing()
+add_subdirectory(tests)
 #cmake -S ./ -B build
 #cmake --build build

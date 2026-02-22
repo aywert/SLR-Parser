@@ -29,9 +29,9 @@ void Parser::execParse() {
               act.type == ActionType::Reduce ? "Reduce " + getRuleString(act.number) : "acc");
     data_.push_back({getStackString(), getInputString(pos, tokens), actionString});
 
-    printRow(getStackString(), getInputString(pos, tokens), 
-              act.type == ActionType::Shift  ? "Shift" : 
-              act.type == ActionType::Reduce ? "Reduce " + getRuleString(act.number) : "acc");
+    // printRow(getStackString(), getInputString(pos, tokens), 
+    //           act.type == ActionType::Shift  ? "Shift" : 
+    //           act.type == ActionType::Reduce ? "Reduce " + getRuleString(act.number) : "acc");
 
     switch (act.type) {
       case ActionType::Shift: {
@@ -74,7 +74,7 @@ void Parser::execParse() {
       }
 
       case ActionType::Accept: {
-        std::cout << "Ready!\n";
+        //std::cout << "Ready!\n";
         return;
       }
 
@@ -110,8 +110,8 @@ void Parser::LatexDump(const char* const  file_name, const char* const  dir_name
   latex.addTable(data_);
   latex.finish();
 
+  #ifdef PDF_CREATE
   std::string sysCallStr = "pdflatex -output-directory=" + latex.getDirName() + " -interaction=batchmode " + latex.getDirName() + "/"+ latex.getFilename() + ".tex" + " > /dev/null ";
-
   std::cout << sysCallStr;
   int result = std::system(sysCallStr.c_str());
 
@@ -122,6 +122,8 @@ void Parser::LatexDump(const char* const  file_name, const char* const  dir_name
   } else {
     std::cerr << "\nCompilation mistake. code: " << result << std::endl;
   }
+
+  #endif
 }
 
 std::string Parser::getStackString() const {
@@ -143,7 +145,7 @@ std::string Parser::getStackString() const {
 std::string Parser::getInputString(int pos, const std::vector<Token>& tokens) const {
     std::string result;
     for (size_t i = pos; i < tokens.size(); i++) {
-        result += tokens[i].value_;
+        result += tokens[i].name_;
         if (i < tokens.size() - 1) result += " ";
     }
     return result;
@@ -163,3 +165,5 @@ void Parser::printRow(const std::string& stack, const std::string& input, const 
               << " | " << input
               << " | " << action << " |\n";
 }
+
+

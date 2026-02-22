@@ -153,7 +153,8 @@ CMakeFiles/SLR.dir/src/main.cpp.o: \
  /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc \
+ /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/sstream \
+ /usr/include/c++/13/bits/sstream.tcc \
  /home/michael/Desktop/Projects/2_course/SBER/SLR/include/Parser.hpp \
  /home/michael/Desktop/Projects/2_course/SBER/SLR/include/SLRtableGen.hpp \
  /usr/include/c++/13/stack /usr/include/c++/13/deque \

@@ -20,6 +20,21 @@ struct Action {
   int number;
 };
 
+struct hashForTest {
+  std::size_t operator()(const std::vector<std::vector<std::string>>& data) const {
+    std::size_t seed = data.size();
+    for (const auto& row : data) {
+      for (const auto& elem: row) {
+        // Используем std::hash для строки
+        std::hash<std::string> hasher;
+        // Комбинируем хэш текущей строки с общим хэшем
+        seed ^= hasher(elem) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+      }
+    }
+    return seed;
+  }
+};
+
 class Parser {
  std::stack<StackItem> stack_; // хранит состояние и текущий символ
 
@@ -45,4 +60,9 @@ class Parser {
     std::string getStackString() const;
     std::string getInputString(int pos, const std::vector<Token>& tokens) const;
     std::string getRuleString(int ruleNum) const ;
+
+    size_t GetHash() {
+      struct hashForTest hasher;
+      return hasher(data_);
+    };
 };

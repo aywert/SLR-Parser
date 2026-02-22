@@ -156,6 +156,7 @@ void SLRtableGen::printTables() const {
 
   latex.finish();
 
+  #ifdef PDF_CREATE
   std::string sysCallStr = "pdflatex -output-directory=" + latex.getDirName() + " -interaction=batchmode " + latex.getDirName() + "/"+ latex.getFilename() + " > /dev/null ";
 
   std::cout << sysCallStr;
@@ -168,6 +169,8 @@ void SLRtableGen::printTables() const {
   } else {
     std::cerr << "\nCompilation mistake. code: " << result << std::endl;
   }
+
+  #endif
  }
 
 size_t SLRtableGen::getGrammarRuleIndex(const Item& item) const {

@@ -24,6 +24,8 @@ Grammar::Grammar() {
   terminals.emplace(LParen);
   terminals.emplace(RParen);
   terminals.emplace(Dollar);
+
+  //terminals = {Id, Plus, Minus, Mul, Div, LParen, RParen, Dollar};
   
   // Initialization of non-terminals
   nonTerminals.emplace(E);
