@@ -7,6 +7,14 @@ SyntaxAnalyzer::SyntaxAnalyzer(const Grammar& g) : grammar(g) {
       grammarRules.emplace_back(nonterm, prod, 0);
     }
   }
+
+  for (const auto& term : grammar.getTerminals()) {
+    grammarTerminals.push_back(term);
+  }
+
+  for (const auto& nonterm : grammar.getNonTerminals()) {
+    grammarNonTerminals.push_back(nonterm);
+  }
 }
 
 void SyntaxAnalyzer::BuildAutomation() {
@@ -114,18 +122,39 @@ void SyntaxAnalyzer::printTables() const {
  void SyntaxAnalyzer::LatexDump(const char* const  file_name, const char* const  dir_name) const {
   LatexCreater latex(file_name, dir_name);
   latex.addHeader("SLR Parsing Tables", "Michael Movsesyan");
-  
-  std::vector<std::vector<std::string>> actionData;
-  for (const auto& [key, action] : actionTable) {
-    actionData.push_back({std::to_string(key.first), key.second.name_, action});
-  }
-  latex.addTable(actionData);
+  std::set<Symbol> terminals = grammar.getTerminals();
+  std::set<Symbol> nonTerminals = grammar.getNonTerminals();
 
-  std::vector<std::vector<std::string>> gotoData;
-  for (const auto& [key, state] : gotoTable) {
-      gotoData.push_back({std::to_string(key.first), key.second.name_, std::to_string(state)});
+  std::vector<std::vector<std::string>> tableData;
+  // actionData.push_back({std::to_string(key.first), key.second.name_, action});
+  for (size_t i = 0; i < states.size(); i++) {
+    const auto state = states[i];
+    std::vector<std::string> row;
+    row.push_back(std::to_string(i));
+   
+    for (const auto& term: terminals) {
+      auto it = actionTable.find({i, term});
+      if (it != actionTable.end()) {
+        row.push_back(it->second);
+      } else {
+        row.push_back("");
+      }
+    }
+
+    // GOTO часть: для каждого нетерминала
+    for (const auto& nonterm : nonTerminals) {
+      auto it = gotoTable.find({i, nonterm});
+      if (it != gotoTable.end()) {
+        row.push_back(std::to_string(it->second));
+      } else {
+        row.push_back("");  // пустая клетка
+      }
+    }
+
+    tableData.push_back(row);
   }
-  latex.addTable(gotoData);
+
+  latex.addTable(tableData, this);
 
   latex.finish();
 
@@ -135,14 +164,12 @@ void SyntaxAnalyzer::printTables() const {
   int result = std::system(sysCallStr.c_str());
 
   if (result == 0) {
-    std::cout << "Компиляция успешна" << std::endl;
+    std::cout << "\nКомпиляция успешна" << std::endl;
     std::string openCommand = "xdg-open " + latex.getDirName() + "/latex.pdf";
     std::system(openCommand.c_str());
   } else {
-    std::cerr << "Ошибка компиляции. Код: " << result << std::endl;
+    std::cerr << "\nОшибка компиляции. Код: " << result << std::endl;
   }
-
-  
  }
 
 size_t SyntaxAnalyzer::getGrammarRuleIndex(const Item& item) const {

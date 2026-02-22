@@ -4,90 +4,28 @@
 \begin{document}
 \maketitle
 
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline
-0 & ( & s1 \\ \hline
-0 & id & s5 \\ \hline
-1 & ( & s1 \\ \hline
-1 & id & s5 \\ \hline
-2 & \$ & acc \\ \hline
-2 & + & s7 \\ \hline
-2 & - & s8 \\ \hline
-3 & \$ & r6 \\ \hline
-3 & ) & r6 \\ \hline
-3 & * & r6 \\ \hline
-3 & + & r6 \\ \hline
-3 & - & r6 \\ \hline
-3 & / & r6 \\ \hline
-4 & \$ & r0 \\ \hline
-4 & ) & r0 \\ \hline
-4 & * & s9 \\ \hline
-4 & + & r0 \\ \hline
-4 & - & r0 \\ \hline
-4 & / & s10 \\ \hline
-5 & \$ & r4 \\ \hline
-5 & ) & r4 \\ \hline
-5 & * & r4 \\ \hline
-5 & + & r4 \\ \hline
-5 & - & r4 \\ \hline
-5 & / & r4 \\ \hline
-6 & ) & s11 \\ \hline
-6 & + & s7 \\ \hline
-6 & - & s8 \\ \hline
-7 & ( & s1 \\ \hline
-7 & id & s5 \\ \hline
-8 & ( & s1 \\ \hline
-8 & id & s5 \\ \hline
-9 & ( & s1 \\ \hline
-9 & id & s5 \\ \hline
-10 & ( & s1 \\ \hline
-10 & id & s5 \\ \hline
-11 & \$ & r5 \\ \hline
-11 & ) & r5 \\ \hline
-11 & * & r5 \\ \hline
-11 & + & r5 \\ \hline
-11 & - & r5 \\ \hline
-11 & / & r5 \\ \hline
-12 & \$ & r2 \\ \hline
-12 & ) & r2 \\ \hline
-12 & * & s9 \\ \hline
-12 & + & r2 \\ \hline
-12 & - & r2 \\ \hline
-12 & / & s10 \\ \hline
-13 & \$ & r1 \\ \hline
-13 & ) & r1 \\ \hline
-13 & * & s9 \\ \hline
-13 & + & r1 \\ \hline
-13 & - & r1 \\ \hline
-13 & / & s10 \\ \hline
-14 & \$ & r8 \\ \hline
-14 & ) & r8 \\ \hline
-14 & * & r8 \\ \hline
-14 & + & r8 \\ \hline
-14 & - & r8 \\ \hline
-14 & / & r8 \\ \hline
-15 & \$ & r7 \\ \hline
-15 & ) & r7 \\ \hline
-15 & * & r7 \\ \hline
-15 & + & r7 \\ \hline
-15 & - & r7 \\ \hline
-15 & / & r7 \\ \hline
-\end{tabular}
-
-\begin{tabular}{|c|c|c|}
+State & \multicolumn{8}{|c|}{ACTION} & \multicolumn{4}{|c|}{GOTO} \\
 \hline
-0 & E & 2 \\ \hline
-0 & F & 3 \\ \hline
-0 & T & 4 \\ \hline
-1 & E & 6 \\ \hline
-1 & F & 3 \\ \hline
-1 & T & 4 \\ \hline
-7 & F & 3 \\ \hline
-7 & T & 12 \\ \hline
-8 & F & 3 \\ \hline
-8 & T & 13 \\ \hline
-9 & F & 14 \\ \hline
-10 & F & 15 \\ \hline
+ &  (\$) & ( & ) & * & + & - & / & id & E & E' & F & T \\
+\hline
+0 &  & s1 &  &  &  &  &  & s5 & 2 &  & 3 & 4 \\ \hline
+1 &  & s1 &  &  &  &  &  & s5 & 6 &  & 3 & 4 \\ \hline
+2 & acc &  &  &  & s7 & s8 &  &  &  &  &  &  \\ \hline
+3 & r6 &  & r6 & r6 & r6 & r6 & r6 &  &  &  &  &  \\ \hline
+4 & r0 &  & r0 & s9 & r0 & r0 & s10 &  &  &  &  &  \\ \hline
+5 & r4 &  & r4 & r4 & r4 & r4 & r4 &  &  &  &  &  \\ \hline
+6 &  &  & s11 &  & s7 & s8 &  &  &  &  &  &  \\ \hline
+7 &  & s1 &  &  &  &  &  & s5 &  &  & 3 & 12 \\ \hline
+8 &  & s1 &  &  &  &  &  & s5 &  &  & 3 & 13 \\ \hline
+9 &  & s1 &  &  &  &  &  & s5 &  &  & 14 &  \\ \hline
+10 &  & s1 &  &  &  &  &  & s5 &  &  & 15 &  \\ \hline
+11 & r5 &  & r5 & r5 & r5 & r5 & r5 &  &  &  &  &  \\ \hline
+12 & r2 &  & r2 & s9 & r2 & r2 & s10 &  &  &  &  &  \\ \hline
+13 & r1 &  & r1 & s9 & r1 & r1 & s10 &  &  &  &  &  \\ \hline
+14 & r8 &  & r8 & r8 & r8 & r8 & r8 &  &  &  &  &  \\ \hline
+15 & r7 &  & r7 & r7 & r7 & r7 & r7 &  &  &  &  &  \\ \hline
 \end{tabular}
 
 \end{document}
