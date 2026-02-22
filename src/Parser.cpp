@@ -25,6 +25,9 @@ void Parser::execParse() {
       break;
     };
     
+    std::string actionString = (act.type == ActionType::Shift  ? "Shift" : 
+              act.type == ActionType::Reduce ? "Reduce " + getRuleString(act.number) : "acc");
+    data_.push_back({getStackString(), getInputString(pos, tokens), actionString});
 
     printRow(getStackString(), getInputString(pos, tokens), 
               act.type == ActionType::Shift  ? "Shift" : 
@@ -100,6 +103,27 @@ struct Action Parser::findAction(int currentState, std::string& currentToken) co
   else                       return {ActionType::Mistake, 0};
 }
 
+void Parser::LatexDump(const char* const  file_name, const char* const  dir_name) const {
+  LatexCreater latex(file_name, dir_name);
+  latex.addHeader("SLR Parser", "Michael Movsesyan");
+  
+  latex.addTable(data_);
+  latex.finish();
+
+  std::string sysCallStr = "pdflatex -output-directory=" + latex.getDirName() + " -interaction=batchmode " + latex.getDirName() + "/"+ latex.getFilename() + ".tex" + " > /dev/null ";
+
+  std::cout << sysCallStr;
+  int result = std::system(sysCallStr.c_str());
+
+  if (result == 0) {
+    std::cout << "\nCompiled succesfully" << std::endl;
+    std::string openCommand = "xdg-open " + latex.getDirName() + "/" + latex.getFilename() +".pdf";
+    std::system(openCommand.c_str());
+  } else {
+    std::cerr << "\nCompilation mistake. code: " << result << std::endl;
+  }
+}
+
 std::string Parser::getStackString() const {
     std::stack<StackItem> temp = stack_;
     std::vector<std::string> items;
@@ -127,7 +151,7 @@ std::string Parser::getInputString(int pos, const std::vector<Token>& tokens) co
 
 std::string Parser::getRuleString(int ruleNum) const {
     const auto& rule = SLR_tg_.grammarRules[ruleNum];
-    std::string result = rule.left_.name_ + " -> ";
+    std::string result = rule.left_.name_ + " $\\to$ ";
     for (const auto& sym : rule.right_) {
         result += sym.name_ + " ";
     }

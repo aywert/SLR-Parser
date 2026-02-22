@@ -22,10 +22,11 @@ int main(void) {
 
   sa.BuildAutomation();
   sa.createSLRTable();
-  sa.LatexDump(latex_file, latex_dir);
+  sa.LatexDump(slr_latex_file, slr_latex_dir);
   //lexer.showTokens();
   Parser prs(lexer, sa);
   prs.execParse();
+  prs.LatexDump(parse_latex_file, parse_latex_dir);
   
   // Symbol after = I.getSymbolAfterDot();
   // std::cout << after.name_;

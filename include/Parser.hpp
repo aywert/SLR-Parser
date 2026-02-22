@@ -2,6 +2,9 @@
 #include "SLRtableGen.hpp"
 #include "lexer.hpp"
 
+constexpr const char* parse_latex_file = "parse";
+constexpr const char* parse_latex_dir  = "output";
+
 struct StackItem {
   int state_;        
   std::string symbol_;
@@ -22,6 +25,7 @@ class Parser {
 
   MyLexer& lexer_;                  
   SLRtableGen& SLR_tg_;
+  std::vector<std::vector<std::string>> data_; // data for LatexDump
 
   public:
     Parser(MyLexer& lexer, SLRtableGen& SLR_tg): 
@@ -31,6 +35,8 @@ class Parser {
     void execParse();
 
     struct Action findAction(int currentState, std::string& currentToken) const;
+
+    void LatexDump(const char* const  file_name, const char* const  dir_name) const;
 
     void printRow(const std::string& stack, 
                   const std::string& input, 

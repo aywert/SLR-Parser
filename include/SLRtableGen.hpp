@@ -6,8 +6,8 @@
 #include "Grammar.hpp"
 
 
-constexpr const char* latex_file = "./output/SLRtable.tex";
-constexpr const char* latex_dir  = "output";
+constexpr const char* slr_latex_file = "SLRtable";
+constexpr const char* slr_latex_dir  = "output";
 
 class SLRtableGen {
   const Grammar& grammar;
@@ -44,11 +44,11 @@ class SLRtableGen {
 
 class LatexCreater {
   std::ofstream file_;
-  std::string filename_;
+  std::string file_name_;
   std::string dir_name_;
   public : 
-    LatexCreater(const char* const file_name, const char* const dir_name) : filename_(file_name), dir_name_(dir_name) {
-      file_.open(file_name);  // Открываем файл для чтения
+    LatexCreater(const char* const file_name, const char* const dir_name) : file_name_(file_name), dir_name_(dir_name) {
+      file_.open(dir_name_ + "/" + file_name_ + ".tex");  // Открываем файл для чтения
       if (!file_.is_open()) {
         std::cerr << "Sorry couldn't open the file" << std::endl;
         return;
@@ -117,6 +117,28 @@ class LatexCreater {
       file_ << "\\end{tabular}\n\n";
     }
 
+    void addTable(const std::vector<std::vector<std::string>>& data) {
+      file_ << "\\begin{tabular}{|";
+      for (size_t i = 0; i < 3; ++i) file_ << "c|";
+      file_ << "}\n\\hline\n";
+
+      file_ << "STACK & INPUT & ACTION \\\\\n"; 
+      file_ << "\\hline\n";                    
+
+      for (const auto& row : data) {
+        for (size_t i = 0; i < row.size(); ++i) {
+          if (i == 0) file_ << "\\" << row[i];
+          if (i == 1) file_ << row[i] << "$$$\\$";
+          if (i == 2) file_ << row[i];
+
+          if (i < row.size() - 1) file_ << " & ";
+        }
+
+        file_ << " \\\\ \\hline\n";
+      }
+        file_ << "\\end{tabular}\n\n";
+    }
+
     void close() {
       if (file_.is_open()) {
         file_.flush();  // сбросить буферы
@@ -131,7 +153,7 @@ class LatexCreater {
 
     
 
-    std::string getFilename() const { return filename_; }
+    std::string getFilename() const { return file_name_; }
     std::string getDirName() const { return dir_name_; }
 };
   

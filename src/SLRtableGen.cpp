@@ -156,17 +156,17 @@ void SLRtableGen::printTables() const {
 
   latex.finish();
 
-  std::string sysCallStr = "pdflatex -output-directory=" + latex.getDirName() + " -interaction=batchmode " + latex.getFilename() + " > /dev/null ";
+  std::string sysCallStr = "pdflatex -output-directory=" + latex.getDirName() + " -interaction=batchmode " + latex.getDirName() + "/"+ latex.getFilename() + " > /dev/null ";
 
   std::cout << sysCallStr;
   int result = std::system(sysCallStr.c_str());
 
   if (result == 0) {
-    std::cout << "\nКомпиляция успешна" << std::endl;
-    std::string openCommand = "xdg-open " + latex.getDirName() + "/latex.pdf";
+    std::cout << "\nCompiled succesfully" << std::endl;
+    std::string openCommand = "xdg-open " + latex.getDirName() + "/" + latex.getFilename() +".pdf";
     std::system(openCommand.c_str());
   } else {
-    std::cerr << "\nОшибка компиляции. Код: " << result << std::endl;
+    std::cerr << "\nCompilation mistake. code: " << result << std::endl;
   }
  }
 
