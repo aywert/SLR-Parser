@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\begin{table}[h!]
+\centering
+\caption{Parsing Table}
+\label{tab:parsing}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{State} & \multicolumn{6}{c|}{\textbf{ACTION}} & \multicolumn{3}{c|}{\textbf{GOTO}} \\
+\cline{2-10}
+ & \textbf{id} & \textbf{+} & \textbf{*} & \textbf{(} & \textbf{)} & \textbf{\$} & \textbf{E} & \textbf{T} & \textbf{F} \\
+\hline
+0  & s5 &   &   & s4 &   &   & 1 & 2 & 3 \\
+\hline
+1  &   & r1 &   &   &   & acc &   &   &   \\
+\hline
+2  &   & r2 &   &   & r2 & r2 &   &   &   \\
+\hline
+\end{tabular}
+\end{table}
+
+\end{document}

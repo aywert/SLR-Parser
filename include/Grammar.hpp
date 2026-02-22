@@ -128,6 +128,8 @@ class Grammar {
   std::vector<std::vector<Symbol>> getProductions(const Symbol& nonTerm) const;
   std::set<Symbol> getAllSymbols() const;
   void printProduction(std::vector<std::vector<Symbol>>& lst) const;
+  std::set<Symbol> getTerminals() const {return terminals;}
+  std::set<Symbol> getNonTerminals() const {return nonTerminals;}
 };
 
 #endif

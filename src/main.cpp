@@ -7,7 +7,7 @@
 
 int main(void) {
 
-  std::ifstream file("test.txt");  // Открываем файл для чтения
+  std::ifstream file("input.txt");  // Открываем файл для чтения
     
   if (!file.is_open()) {
     std::cerr << "Sorry couldn't open the file" << std::endl;
@@ -68,6 +68,8 @@ int main(void) {
   SyntaxAnalyzer sa(gr);
   sa.BuildAutomation();
 
+  sa.createSLRTable();
+  sa.printTables();
   // Symbol after = I.getSymbolAfterDot();
   // std::cout << after.name_;
 

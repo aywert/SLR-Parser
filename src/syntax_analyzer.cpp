@@ -1,14 +1,21 @@
 #include "syntax_analyzer.hpp"
 
+SyntaxAnalyzer::SyntaxAnalyzer(const Grammar& g) : grammar(g) {
+  for (const auto& nonterm : grammar.getNonTerminals()) {
+    auto productions = grammar.getProductions(nonterm);
+    for (const auto& prod : productions) {
+      grammarRules.emplace_back(nonterm, prod, 0);
+    }
+  }
+}
+
 void SyntaxAnalyzer::BuildAutomation() {
 
   Symbol E_ = {SymbolType::NON_TERMINAL,  "E'"};
   Symbol E  = {SymbolType::NON_TERMINAL,  "E"};
 
   Item startItem(E_, {E}, 0); // E' -> .E
-
   states.push_back(grammar.Closure({startItem})); // first state
-
   size_t current = 0; //position of state we are currently processing in states vector
 
   while (current < states.size()) {
@@ -23,22 +30,95 @@ void SyntaxAnalyzer::BuildAutomation() {
           
           if (foundIndex == -1) { // -1 means that there is no such state in states vector
             states.push_back(nextState);
-            // printf("States updated\n");
-            // printStates();
-            // printf("---");
             foundIndex = states.size() - 1;
-            transitions[{current, symbol}] = foundIndex;
+            //transitions[{current, symbol}] = foundIndex;
           }  
         }
-
-        // else {
-        //   printf("See why closure is sorry\n");
-        //   //printStates();
-        // }
       }
-    printStates();
+    //printStates();
     current++;
   }
+}
+
+void SyntaxAnalyzer::createSLRTable() {
+Symbol Dollar = {SymbolType::TERMINAL,      "$"};
+Symbol E_     = {SymbolType::NON_TERMINAL,  "E'"};
+// Для каждого состояния
+for (size_t i = 0; i < states.size(); i++) {
+    const auto state = states[i];
+    
+    // Для каждого пункта в состоянии
+    for (const auto& item : state) {  
+        
+        // СЛУЧАЙ 1: Точка в конце (свертка)
+        if (item.isComplete()) {
+            if (item.left_ == E_) {
+                // Принятие
+                actionTable[{i, Dollar}] = "acc";
+            } else {
+                // Свертка
+                int ruleNum = getGrammarRuleIndex(item);
+                
+                // Для всех терминалов из FOLLOW левой части
+                auto followSet = grammar.Follow(item.left_);
+                std::cout << "Follow gave me: "; 
+                for (const auto& term : followSet) {
+                  std::cout << term.name_<< " ";
+                  actionTable[{i, term}] = "r" + std::to_string(ruleNum);
+                }
+
+                std::cout << std::endl;
+            }
+        } 
+        // СЛУЧАЙ 2: Точка перед терминалом (сдвиг)
+        else {
+            Symbol nextSym = item.getSymbolAfterDot();
+            
+            if (nextSym.type_ == SymbolType::TERMINAL) {
+              auto nextState = grammar.Goto(state, nextSym);
+              int foundIndex = findStateIndex(nextState);
+              if (foundIndex != -1) {
+                actionTable[{i, nextSym}] = "s" + std::to_string(foundIndex);
+              }
+            }
+        }
+    }
+    
+    // Заполняем GOTO таблицу для нетерминалов
+    for (const auto& nonTerm : grammar.getNonTerminals()) {
+
+      auto nextState = grammar.Goto(state, nonTerm);
+      int foundIndex = findStateIndex(nextState);
+      if (foundIndex != -1) {
+        gotoTable[{i, nonTerm}] = foundIndex;
+      }
+    }
+}
+}
+
+
+void SyntaxAnalyzer::printTables() const {
+  std::cout << "\n=== ТАБЛИЦА ACTION ===\n";
+  for (const auto& [key, action] : actionTable) {
+      std::cout << "ACTION[" << key.first << ", " << key.second.name_ 
+                << "] = " << action << "\n";
+  }
+  
+  std::cout << "\n=== ТАБЛИЦА GOTO ===\n";
+  for (const auto& [key, state] : gotoTable) {
+      std::cout << "GOTO[" << key.first << ", " << key.second.name_ 
+                << "] = " << state << "\n";
+  }
+}
+
+
+size_t SyntaxAnalyzer::getGrammarRuleIndex(const Item& item) const {
+  for (size_t i = 0; i < grammarRules.size(); i++) {
+    if (grammarRules[i].left_ == item.left_ && grammarRules[i].right_ == item.right_) {
+      return i;
+    }
+  }
+  return -1; // Not found, should not happen if item is valid
 }
 
 int SyntaxAnalyzer::findStateIndex(const std::set<Item>& state) const {
