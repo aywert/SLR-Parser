@@ -157,7 +157,7 @@ void SLRtableGen::printTables() const {
   latex.finish();
 
   #ifdef PDF_CREATE
-  std::string sysCallStr = "pdflatex -output-directory=" + latex.getDirName() + " -interaction=batchmode " + latex.getDirName() + "/"+ latex.getFilename() + .tex" > /dev/null ";
+  std::string sysCallStr = "pdflatex -output-directory=" + latex.getDirName() + " -interaction=batchmode " + latex.getDirName() + "/"+ latex.getFilename() + ".tex > /dev/null ";
 
   std::cout << sysCallStr;
   int result = std::system(sysCallStr.c_str());

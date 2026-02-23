@@ -17,7 +17,7 @@ ctest -L end_to_end
 
 
 Также имеется возможность получить SLR таблицу и визуализацию процесса парсинга в явном виде.
-Для этого необходимо иметь установленным pdflatex:
+Для этого необходимо иметь установленным pdflatex. Запуск из корня проекта:
 
 ```
 pdflatex -output-directory=output -interaction=batchmode output/parse.tex > /dev/null

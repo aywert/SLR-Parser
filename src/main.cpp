@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
   prs.execParse();
 
   #ifdef PDF_CREATE
-  use LatexDumps only from the root of the project like this: ./build/SLR input.txt
+  //use LatexDumps only from the root of the project like this: ./build/SLR input.txt
   sa.LatexDump(slr_latex_file, slr_latex_dir);
   prs.LatexDump(parse_latex_file, parse_latex_dir);
   #endif

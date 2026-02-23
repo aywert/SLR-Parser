@@ -8,14 +8,15 @@
 \hline
 STACK & INPUT & ACTION \\
 \hline
-\$ & id * id $$$$\$ & Shift \\ \hline
-\$id & * id $$$$\$ & Reduce F $\to$ id  \\ \hline
-\$F & * id $$$$\$ & Reduce T $\to$ F  \\ \hline
-\$T & * id $$$$\$ & Shift \\ \hline
-\$T* & id $$$$\$ & Shift \\ \hline
-\$T*id & $$$$\$ & Reduce F $\to$ id  \\ \hline
-\$T*F & $$$$\$ & Reduce T $\to$ T * F  \\ \hline
-\$T & $$$$\$ & Reduce E $\to$ T  \\ \hline
+\$ & id + id $$$$\$ & Shift \\ \hline
+\$id & + id $$$$\$ & Reduce F $\to$ id  \\ \hline
+\$F & + id $$$$\$ & Reduce T $\to$ F  \\ \hline
+\$T & + id $$$$\$ & Reduce E $\to$ T  \\ \hline
+\$E & + id $$$$\$ & Shift \\ \hline
+\$E+ & id $$$$\$ & Shift \\ \hline
+\$E+id & $$$$\$ & Reduce F $\to$ id  \\ \hline
+\$E+F & $$$$\$ & Reduce T $\to$ F  \\ \hline
+\$E+T & $$$$\$ & Reduce E $\to$ E + T  \\ \hline
 \$E & $$$$\$ & acc \\ \hline
 \end{tabular}
 
